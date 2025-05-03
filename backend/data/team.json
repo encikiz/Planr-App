@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Alex Johnson",
+    "role": "Backend Developer",
+    "email": "alex.johnson@example.com",
+    "avatar": "avatar1.jpg",
+    "department": "Engineering",
+    "projects": [1, 3]
+  },
+  {
+    "id": 2,
+    "name": "Sarah Chen",
+    "role": "UI/UX Designer",
+    "email": "sarah.chen@example.com",
+    "avatar": "avatar2.jpg",
+    "department": "Design",
+    "projects": [1, 2]
+  },
+  {
+    "id": 3,
+    "name": "Michael Rodriguez",
+    "role": "Frontend Developer",
+    "email": "michael.rodriguez@example.com",
+    "avatar": "avatar3.jpg",
+    "department": "Engineering",
+    "projects": [1, 4]
+  },
+  {
+    "id": 4,
+    "name": "Emily Wilson",
+    "role": "Product Manager",
+    "email": "emily.wilson@example.com",
+    "avatar": "avatar4.jpg",
+    "department": "Product",
+    "projects": [2, 5]
+  },
+  {
+    "id": 5,
+    "name": "David Kim",
+    "role": "Mobile Developer",
+    "email": "david.kim@example.com",
+    "avatar": "avatar5.jpg",
+    "department": "Engineering",
+    "projects": [2, 5]
+  },
+  {
+    "id": 6,
+    "name": "Lisa Patel",
+    "role": "Database Administrator",
+    "email": "lisa.patel@example.com",
+    "avatar": "avatar6.jpg",
+    "department": "IT",
+    "projects": [3]
+  },
+  {
+    "id": 7,
+    "name": "James Thompson",
+    "role": "Marketing Specialist",
+    "email": "james.thompson@example.com",
+    "avatar": "avatar7.jpg",
+    "department": "Marketing",
+    "projects": [4]
+  }
+]

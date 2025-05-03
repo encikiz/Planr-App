@@ -1,0 +1,57 @@
+/* CSS to rearrange the filters section in the team page */
+
+/* Adjust the filters section layout */
+.filters-section {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 15px 20px !important;
+    background-color: white !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+/* Adjust the team header actions (New Member button and team buttons) */
+.team-header-actions {
+    order: 1 !important;
+    margin-right: 15px !important;
+    display: flex !important;
+    gap: 10px !important;
+}
+
+/* Adjust the filter options (department and sort) */
+.filter-options {
+    order: 2 !important;
+    display: flex !important;
+    gap: 15px !important;
+    flex-wrap: nowrap !important;
+}
+
+/* Adjust the search box */
+.search-box {
+    order: 3 !important;
+    flex: 1 !important;
+    max-width: 300px !important;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .filters-section {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+
+    .team-header-actions,
+    .filter-options,
+    .search-box {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .filter-options {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+}

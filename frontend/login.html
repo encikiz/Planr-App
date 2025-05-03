@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Planr</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/theme-toggle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1 class="logo">Planr</h1>
+                <p class="tagline">Project Management Simplified</p>
+            </div>
+
+            <div class="login-options">
+                <div class="login-option">
+                    <a href="/api/auth/google" class="google-login-btn">
+                        <i class="fab fa-google"></i>
+                        <span>Login with Google</span>
+                    </a>
+                </div>
+
+                <div class="login-divider">
+                    <span>OR</span>
+                </div>
+
+                <div class="login-option">
+                    <a href="/api/auth/guest" class="guest-login-btn">
+                        <i class="fas fa-user"></i>
+                        <span>Continue as Guest</span>
+                    </a>
+                    <p class="guest-note">View-only access to explore Planr</p>
+                </div>
+            </div>
+
+            <div class="login-footer">
+                <p>© 2025 Planr v0.2 developed by hafizanm@gmail.com</p>
+                <button type="button" id="theme-toggle" class="theme-toggle" title="Switch to Dark Mode">
+                    <i class="far fa-lightbulb"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/notification.js"></script>
+    <script src="assets/js/theme-switcher.js"></script>
+    <script src="assets/js/login.js"></script>
+</body>
+</html>

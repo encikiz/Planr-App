@@ -1,0 +1,96 @@
+/* Tab Styles */
+
+/* Team Tabs (used on team.html) */
+.team-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-light);
+    gap: 5px;
+}
+
+/* Member Tabs (used on team-members.html) */
+.member-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-light);
+    background-color: var(--background-alt);
+    border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+    overflow: hidden;
+}
+
+.tab-btn {
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.tab-btn i {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.tab-btn:hover {
+    color: var(--primary-color);
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    font-weight: 600;
+    background-color: var(--background-card);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.member-tabs .tab-btn.active {
+    color: var(--text-primary);
+    background-color: var(--background-card);
+}
+
+/* Tab Content */
+.tab-content {
+    padding: 20px;
+    background-color: var(--background-card);
+    border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+    min-height: 300px;
+}
+
+.tab-pane {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tab-pane.active {
+    display: block !important;
+    opacity: 1 !important;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Dark Mode */
+[data-theme="dark"] .team-tabs {
+    border-bottom-color: var(--border-dark);
+}
+
+[data-theme="dark"] .tab-btn {
+    color: var(--text-secondary-dark);
+}
+
+[data-theme="dark"] .tab-btn:hover {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .tab-btn.active {
+    color: #ffffff;
+    background-color: var(--primary-color);
+}

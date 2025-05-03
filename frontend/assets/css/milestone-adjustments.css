@@ -1,0 +1,47 @@
+/* Milestone Card Adjustments */
+
+/* 1. Align the due date to the right */
+.milestone-meta {
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    position: relative;
+}
+
+.milestone-due {
+    margin-left: auto !important;
+    justify-content: flex-end !important;
+}
+
+/* 2. Make the milestone status section 1.4x wider */
+.milestone-status {
+    min-width: calc(110px * 1.4) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .milestone-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .milestone-due {
+        margin-left: 0 !important;
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .milestone-status {
+        min-width: 100% !important;
+    }
+    
+    .milestone-due {
+        align-self: flex-start;
+        width: 100%;
+        justify-content: flex-start !important;
+    }
+}

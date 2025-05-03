@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Milestone Reports - Planr</title>
+    <link rel="stylesheet" href="/assets/css/themes.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/notification-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/auth.css">
+    <link rel="stylesheet" href="/assets/css/user-profile.css">
+    <link rel="stylesheet" href="/assets/css/dark-mode-fix.css">
+    <link rel="stylesheet" href="/assets/css/milestones-consolidated.css">
+    <link rel="stylesheet" href="/assets/css/milestone-reports.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Full Page Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <h1 class="logo">Planr</h1>
+        <div class="spinner"></div>
+        <p class="loading-text">Loading milestone reports...</p>
+    </div>
+
+    <div class="app-container page-transition">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">Planr</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="/index.html">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projects.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tasks.html">
+                            <i class="fas fa-tasks"></i>
+                            <span>Tasks</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="milestones.html">
+                            <i class="fas fa-flag"></i>
+                            <span>Milestones</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="team-members.html">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Team Members</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="team.html">
+                            <i class="fas fa-users"></i>
+                            <span>Teams</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>© 2025 Planr. Developed by Hafizan.</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Milestone Reports</h2>
+                <div class="user-profile">
+                    <button type="button" id="theme-toggle" class="theme-toggle" title="Switch to Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <span id="welcome-message">Welcome, Mohd Hafizan</span>
+                    <div class="avatar" id="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="User Avatar">
+                    </div>
+                    <button type="button" class="logout-btn" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i><span class="logout-text">Logout</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="reports-page">
+                <div class="reports-header-actions">
+                    <div class="reports-back">
+                        <a href="milestones.html" class="back-link">
+                            <i class="fas fa-arrow-left"></i> Back to Milestones
+                        </a>
+                    </div>
+                    <div class="reports-export">
+                        <button type="button" id="export-pdf-btn" class="export-btn">
+                            <i class="fas fa-file-pdf"></i> Export PDF
+                        </button>
+                        <button type="button" id="export-csv-btn" class="export-btn">
+                            <i class="fas fa-file-csv"></i> Export CSV
+                        </button>
+                    </div>
+                </div>
+
+                <div class="reports-filters">
+                    <div class="filter-group">
+                        <label for="project-filter">Project</label>
+                        <select id="project-filter">
+                            <option value="all">All Projects</option>
+                            <!-- Projects will be loaded dynamically -->
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="date-range-filter">Date Range</label>
+                        <select id="date-range-filter">
+                            <option value="all">All Time</option>
+                            <option value="this-month">This Month</option>
+                            <option value="last-month">Last Month</option>
+                            <option value="this-quarter">This Quarter</option>
+                            <option value="last-quarter">Last Quarter</option>
+                            <option value="this-year">This Year</option>
+                            <option value="custom">Custom Range</option>
+                        </select>
+                    </div>
+                    <div class="filter-group custom-date-range hidden" id="custom-date-range">
+                        <div class="date-inputs">
+                            <div class="date-input">
+                                <label for="start-date">Start Date</label>
+                                <input type="date" id="start-date">
+                            </div>
+                            <div class="date-input">
+                                <label for="end-date">End Date</label>
+                                <input type="date" id="end-date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-actions">
+                        <button type="button" id="apply-filters-btn" class="apply-filters-btn">
+                            <i class="fas fa-filter"></i> Apply Filters
+                        </button>
+                    </div>
+                </div>
+
+                <div class="reports-grid">
+                    <!-- Milestone Status Distribution -->
+                    <div class="report-card">
+                        <h3>Milestone Status Distribution</h3>
+                        <div class="chart-container">
+                            <canvas id="status-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Milestone Completion Trend -->
+                    <div class="report-card">
+                        <h3>Milestone Completion Trend</h3>
+                        <div class="chart-container">
+                            <canvas id="completion-trend-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Project Progress -->
+                    <div class="report-card">
+                        <h3>Project Progress</h3>
+                        <div class="chart-container">
+                            <canvas id="project-progress-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Milestone Burndown -->
+                    <div class="report-card">
+                        <h3>Milestone Burndown</h3>
+                        <div class="chart-container">
+                            <canvas id="burndown-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reports-table-section">
+                    <h3>Milestone Details</h3>
+                    <div class="table-container">
+                        <table class="reports-table">
+                            <thead>
+                                <tr>
+                                    <th>Milestone</th>
+                                    <th>Project</th>
+                                    <th>Status</th>
+                                    <th>Progress</th>
+                                    <th>Due Date</th>
+                                    <th>Created By</th>
+                                </tr>
+                            </thead>
+                            <tbody id="milestone-table-body">
+                                <!-- Table rows will be loaded dynamically -->
+                                <tr class="loading-row">
+                                    <td colspan="6">
+                                        <div class="loading-spinner-small"></div>
+                                        <span>Loading milestone data...</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/notification.js"></script>
+    <script src="/assets/js/theme-switcher.js"></script>
+    <script src="/assets/js/projects.js"></script>
+    <script src="/assets/js/milestones-consolidated.js"></script>
+    <script src="/assets/js/milestone-reports.js"></script>
+    <script>
+        // Direct event listener for logout button
+        window.onload = function() {
+            const logoutBtn = document.querySelector('.logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    console.log('Logout button clicked');
+                    // Show notification
+                    if (typeof showNotification === 'function') {
+                        showNotification('Logging out...', 'info');
+                    }
+
+                    // Redirect to login page
+                    setTimeout(function() {
+                        window.location.href = '/login';
+                    }, 1000);
+                });
+            }
+
+            // Initialize reports page
+            initMilestoneReports();
+
+            // Hide loading overlay
+            const loadingOverlay = document.getElementById('loading-overlay');
+            if (loadingOverlay) {
+                setTimeout(() => {
+                    loadingOverlay.style.opacity = '0';
+                    setTimeout(() => {
+                        loadingOverlay.style.display = 'none';
+                    }, 300);
+                }, 500);
+            }
+        };
+    </script>
+</body>
+</html>

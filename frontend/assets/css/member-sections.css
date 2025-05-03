@@ -1,0 +1,500 @@
+.project-item, .task-item {
+    background-color: var(--card-color);
+    border-radius: var(--border-radius-md);
+    padding: 16px;
+    margin-bottom: 12px;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: var(--shadow-xs);
+    transition: all 0.3s ease;
+}
+
+.project-item:hover, .task-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.project-item.high, .task-item.high {
+    border-left-color: var(--warning-color);
+}
+
+.project-item.medium, .task-item.medium {
+    border-left-color: var(--accent-color);
+}
+
+.project-item.low, .task-item.low {
+    border-left-color: var(--success-color);
+}
+
+.task-item.completed {
+    border-left-color: var(--success-color);
+    opacity: 0.8;
+}
+
+.task-item.in-progress {
+    border-left-color: var(--primary-color);
+}
+
+.task-item.pending {
+    border-left-color: var(--accent-color);
+}
+
+.task-item.overdue {
+    border-left-color: var(--warning-color);
+}
+
+.project-header, .task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.project-name, .task-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-primary);
+}
+
+.project-progress {
+    margin-top: 8px;
+}
+
+.project-progress-value {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+.project-progress-bar {
+    height: 6px;
+    background-color: var(--background-alt);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.progress-bar-fill.high {
+    background-color: var(--warning-color);
+}
+
+.progress-bar-fill.medium {
+    background-color: var(--accent-color);
+}
+
+.progress-bar-fill.low {
+    background-color: var(--success-color);
+}
+
+.task-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 8px;
+}
+
+.task-status, .task-due {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.task-status i, .task-due i {
+    font-size: 12px;
+}
+
+.task-due.overdue {
+    color: var(--warning-color);
+}
+
+.empty-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-tertiary);
+}
+
+/* Member Details Section Styles - Improved Layout */
+.member-profile {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 20px;
+}
+
+.member-avatar-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 4px solid var(--background-card);
+    flex-shrink: 0;
+}
+
+.member-avatar-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-profile-info {
+    flex: 1;
+}
+
+.member-profile-info h2 {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.member-role-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 16px;
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.member-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.detail-label {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.detail-label i {
+    color: var(--primary-color);
+    font-size: 14px;
+    width: 16px;
+    text-align: center;
+}
+
+.detail-value {
+    font-size: 14px;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.detail-value a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.detail-value a:hover {
+    text-decoration: underline;
+}
+
+.skills-item {
+    grid-column: 1 / -1;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background-color: var(--background-alt);
+    color: var(--text-secondary);
+    font-size: 12px;
+    border: 1px solid var(--border-light);
+}
+
+.member-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Button styles */
+.btn-secondary {
+    background-color: var(--background-alt);
+    color: var(--text-primary);
+    border: 1px solid var(--border-light);
+}
+
+.btn-secondary:hover {
+    background-color: var(--background-hover);
+}
+
+/* Empty section and loading states */
+.empty-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-tertiary);
+    background-color: var(--background-alt);
+    border-radius: var(--border-radius-md);
+    min-height: 200px;
+}
+
+.empty-section i {
+    font-size: 32px;
+    margin-bottom: 16px;
+    opacity: 0.6;
+}
+
+.empty-section h4 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.empty-section p {
+    margin: 0;
+    font-size: 14px;
+    max-width: 300px;
+}
+
+.loading-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-tertiary);
+    min-height: 200px;
+}
+
+.loading-section i {
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: var(--primary-color);
+}
+
+.chart-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--background-card-rgb), 0.8);
+    z-index: 10;
+}
+
+/* Department Colors */
+.department-badge.department-engineering {
+    background-color: rgba(13, 138, 188, 0.1);
+    color: #0d8abc;
+}
+
+.department-badge.department-design {
+    background-color: rgba(156, 39, 176, 0.1);
+    color: #9c27b0;
+}
+
+.department-badge.department-product {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+}
+
+.department-badge.department-marketing {
+    background-color: rgba(255, 152, 0, 0.1);
+    color: #ff9800;
+}
+
+.department-badge.department-it {
+    background-color: rgba(33, 150, 243, 0.1);
+    color: #2196f3;
+}
+
+.empty-section i {
+    font-size: 32px;
+    margin-bottom: 16px;
+    opacity: 0.6;
+}
+
+.empty-section h4 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+.empty-section p {
+    margin: 0;
+    font-size: 14px;
+    max-width: 300px;
+}
+
+/* Error section styling */
+.error-section {
+    color: var(--danger-color);
+}
+
+.error-section i {
+    color: var(--danger-color);
+    opacity: 0.8;
+}
+
+/* Loading section styling */
+.loading-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.loading-section i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.loading-section p {
+    margin: 0;
+}
+
+/* Chart error styling */
+.chart-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    text-align: center;
+    color: var(--text-tertiary);
+}
+
+.chart-error i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--danger-color);
+}
+
+.chart-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(30, 30, 30, 0.7);
+    z-index: 1;
+}
+
+/* Full width loading section */
+.loading-section.full-width {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Button styling in empty sections */
+.empty-section button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.empty-section button:hover {
+    background-color: var(--primary-dark);
+}
+
+.empty-section button i {
+    font-size: 14px;
+    margin: 0;
+    opacity: 1;
+}
+
+/* Utility classes */
+.mt-3 {
+    margin-top: 16px !important;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Force visibility for tab content */
+.tab-content {
+    display: block !important;
+}
+
+.tab-pane.active {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* Team member details container */
+.team-member-details-section {
+    flex: 1;
+    overflow: auto;
+    padding: 0;
+    background-color: var(--background-card);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}

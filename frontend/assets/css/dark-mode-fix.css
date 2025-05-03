@@ -1,0 +1,140 @@
+/* Dark Mode Color Consistency Fix */
+
+/* Ensure main background is consistently #1E1E1E */
+[data-theme="dark"] body,
+[data-theme="dark"] .main-content,
+[data-theme="dark"] .dashboard-container,
+[data-theme="dark"] .projects-section,
+[data-theme="dark"] .tasks-section,
+[data-theme="dark"] .team-section,
+[data-theme="dark"] .metrics-section {
+    background-color: #1E1E1E !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* Fix for section headers */
+[data-theme="dark"] .section-header {
+    background-color: #333333 !important;
+    border-bottom: 1px solid #3C3C3C !important;
+    border-radius: 8px 8px 0 0 !important;
+    padding: 15px 20px !important;
+    margin-bottom: 15px !important;
+}
+
+/* Specific headers for Project Overview, Progress Overview, and Recent Activity */
+[data-theme="dark"] .projects-overview .section-header,
+[data-theme="dark"] .progress-visualization .section-header,
+[data-theme="dark"] .recent-activity .section-header {
+    background-color: #2D2D30 !important;
+}
+
+[data-theme="dark"] .section-header h3 {
+    color: #E8E8E8 !important;
+    font-weight: 600 !important;
+}
+
+[data-theme="dark"] .view-all {
+    color: #3794FF !important;
+}
+
+/* Fix for metric cards */
+[data-theme="dark"] .metric-card {
+    background-color: #2D2D30 !important;
+    border: 1px solid #3C3C3C !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="dark"] .metric-card:hover {
+    background-color: #333333 !important;
+    border-color: #3794FF !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Fix for project cards */
+[data-theme="dark"] .project-card {
+    background-color: #2D2D30 !important;
+    border: 1px solid #3C3C3C !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="dark"] .project-card:hover {
+    background-color: #333333 !important;
+    border-color: #3794FF !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Fix for quick action cards */
+[data-theme="dark"] .quick-action-card {
+    background-color: #2D2D30 !important;
+    border: 1px solid #3C3C3C !important;
+}
+
+[data-theme="dark"] .quick-action-card:hover {
+    background-color: #333333 !important;
+    border-color: #3794FF !important;
+}
+
+/* Fix for dashboard sections - consistent #2D2D30 background */
+[data-theme="dark"] .quick-actions-container,
+[data-theme="dark"] .projects-overview,
+[data-theme="dark"] .progress-visualization,
+[data-theme="dark"] .recent-activity {
+    background-color: #2D2D30 !important;
+    border: 1px solid #3C3C3C !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+    margin-bottom: 20px !important;
+}
+
+[data-theme="dark"] .quick-actions-header {
+    background-color: #2D2D30 !important;
+    border-bottom: 1px solid #3C3C3C !important;
+    border-radius: 8px 8px 0 0 !important;
+}
+
+[data-theme="dark"] .quick-actions-header h3 {
+    color: #E8E8E8 !important;
+    font-weight: 600 !important;
+}
+
+/* Fix for chart container */
+[data-theme="dark"] .chart-container {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+/* Fix for activity list */
+[data-theme="dark"] .activity-list {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 16px;
+}
+
+/* Fix for projects grid */
+[data-theme="dark"] .projects-grid {
+    padding: 16px !important;
+}
+
+/* Fix for any remaining inconsistencies */
+[data-theme="dark"] .content-header {
+    background-color: #1E1E1E !important;
+    border-bottom: 1px solid #3C3C3C !important;
+}
+
+/* Fix for scrollbar track */
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: #1E1E1E !important;
+}
+
+/* Fix for scrollbar thumb */
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: #3C3C3C !important;
+    border-radius: 5px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: #505050 !important;
+}

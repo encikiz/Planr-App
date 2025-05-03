@@ -1,0 +1,121 @@
+/* CSS to rearrange the filters section in the tasks page */
+
+/* Adjust the filters section layout */
+.tasks-container .filters-section {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 15px 20px !important;
+    background-color: white !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+/* Adjust the new task button */
+.tasks-container .task-header-actions {
+    order: 1 !important;
+    margin-right: 15px !important;
+}
+
+/* Adjust the filter options */
+.tasks-container .filter-options {
+    order: 2 !important;
+    display: flex !important;
+    gap: 15px !important;
+    flex-wrap: nowrap !important;
+}
+
+/* Adjust the filter groups */
+.tasks-container .filter-group {
+    min-width: 150px !important;
+}
+
+/* Adjust the search box */
+.tasks-container .search-box {
+    order: 3 !important;
+    flex: 1 !important;
+    max-width: 300px !important;
+    position: relative !important;
+}
+
+.tasks-container .search-box input {
+    width: 100% !important;
+    padding: 8px 12px !important;
+    padding-left: 35px !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--border-radius-sm) !important;
+    font-size: 0.9rem !important;
+}
+
+.tasks-container .search-box::before {
+    content: '\f002' !important;
+    font-family: 'Font Awesome 5 Free' !important;
+    font-weight: 900 !important;
+    position: absolute !important;
+    left: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: var(--text-secondary) !important;
+}
+
+/* Adjust the view options section */
+.tasks-container .view-options {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 20px !important;
+    padding: 10px 20px !important;
+    background-color: white !important;
+    border-bottom: 1px solid var(--border-light) !important;
+    margin-top: 1px !important; /* Add a small gap between the two sections */
+}
+
+/* Adjust the view toggle */
+.tasks-container .view-toggle {
+    order: 1 !important;
+    margin-right: 15px !important;
+}
+
+/* Adjust the sort options */
+.tasks-container .sort-options {
+    order: 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+/* Adjust the group options */
+.tasks-container .group-options {
+    order: 3 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-left: 15px !important;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .tasks-container .filters-section,
+    .tasks-container .view-options {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+
+    .tasks-container .task-header-actions,
+    .tasks-container .filter-options,
+    .tasks-container .search-box,
+    .tasks-container .view-toggle,
+    .tasks-container .sort-options,
+    .tasks-container .group-options {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .tasks-container .filter-options {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+}

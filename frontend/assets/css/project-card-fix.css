@@ -1,0 +1,13 @@
+/* Project Card Background Fix for Light Mode */
+
+/* Set project card background to white in light mode */
+.project-item,
+.projects-list .project-card {
+    background-color: #FFFFFF !important; /* Using white color from themes.css */
+}
+
+/* Ensure dark mode still uses the correct background color */
+[data-theme="dark"] .project-item,
+[data-theme="dark"] .projects-list .project-card {
+    background-color: #2D2D30 !important; /* Using dark mode card background from themes.css */
+}

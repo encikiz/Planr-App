@@ -1,0 +1,252 @@
+/* Team Delete Styles */
+
+/* Delete button styles */
+.delete-team-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.delete-team-btn:hover {
+    background-color: #d32f2f;
+}
+
+.delete-team-btn i {
+    margin-right: 6px;
+}
+
+/* Confirmation modal styles */
+.confirmation-modal .modal-body {
+    padding: 20px;
+}
+
+.confirmation-message {
+    text-align: center;
+    padding: 20px;
+}
+
+.confirmation-message p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.warning-text {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.warning-text i {
+    margin-right: 6px;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+.delete-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Dark mode styles */
+.dark-mode .delete-team-btn {
+    background-color: #d32f2f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .delete-team-btn:hover {
+    background-color: #b71c1c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .warning-text {
+    color: #ff5252;
+}
+
+.dark-mode .delete-btn {
+    background-color: #d32f2f;
+}
+
+.dark-mode .delete-btn:hover {
+    background-color: #b71c1c;
+}
+
+.dark-mode .delete-btn:disabled {
+    background-color: #555;
+}
+
+.dark-mode .view-team-btn {
+    background-color: #1976D2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .view-team-btn:hover {
+    background-color: #0D47A1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .edit-team-btn {
+    background-color: #388E3C;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .edit-team-btn:hover {
+    background-color: #2E7D32;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Team card action buttons */
+.team-card .team-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.team-card .team-action-btn {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 80px;
+    text-align: center;
+}
+
+.team-card .team-action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.team-card .team-action-btn i {
+    margin-right: 6px;
+    font-size: 16px;
+}
+
+.team-card .view-team-btn {
+    background-color: #2196F3;
+    color: white;
+}
+
+.team-card .view-team-btn:hover {
+    background-color: #1976D2;
+}
+
+.team-card .edit-team-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.team-card .edit-team-btn:hover {
+    background-color: #388E3C;
+}
+
+.team-card .delete-team-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.team-card .delete-team-btn:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Team detail actions */
+.team-detail-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .team-card .team-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .team-card .team-action-btn,
+    .team-card .delete-team-btn {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+
+    .team-detail-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .team-detail-actions button {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+}
+
+/* Improved button visibility for team details modal */
+.team-detail-actions .edit-team-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.team-detail-actions .edit-team-btn:hover {
+    background-color: #388E3C;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.team-detail-actions .delete-team-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.team-detail-actions .delete-team-btn:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.team-detail-actions button i {
+    margin-right: 6px;
+    font-size: 16px;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "planr-app",
+  "version": "1.0.0",
+  "description": "Planr Project Management Application",
+  "private": true,
+  "scripts": {
+    "start": "cd backend && node server.js",
+    "build": "cd backend && npm install"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Login - Planr</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-header {
+            margin-bottom: 20px;
+        }
+        .login-header h1 {
+            color: #0D8ABC;
+            margin-bottom: 5px;
+        }
+        .login-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .login-option a {
+            display: block;
+            padding: 10px;
+            background-color: #0D8ABC;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .login-option a:hover {
+            background-color: #0A6A8F;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="login-header">
+            <h1>Planr</h1>
+            <p>Project Management Simplified</p>
+        </div>
+        
+        <div class="login-options">
+            <div class="login-option">
+                <a href="/api/auth/google">Login with Google</a>
+            </div>
+            
+            <div class="login-option">
+                <a href="/api/auth/guest">Continue as Guest</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

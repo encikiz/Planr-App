@@ -1,0 +1,108 @@
+/* Task Modal Scrollbar Styling */
+
+/* Modal container scrollbar styling */
+.modal-container {
+    max-height: 90vh;
+    overflow-y: auto !important;
+}
+
+/* Scrollbar styling for modal container */
+.modal-container::-webkit-scrollbar {
+    width: 6px;
+    display: block !important;
+}
+
+.modal-container::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 3px;
+}
+
+.modal-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.modal-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode scrollbar styling for modal container */
+[data-theme="dark"] .modal-container::-webkit-scrollbar-track {
+    background: #2D2D30;
+}
+
+[data-theme="dark"] .modal-container::-webkit-scrollbar-thumb {
+    background-color: #505050;
+    border-radius: 6px;
+    border: 2px solid #2D2D30;
+}
+
+/* Team members selection in task modal */
+.team-members-selection {
+    max-height: 200px;
+    overflow-y: auto !important;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 5px;
+}
+
+/* Scrollbar styling for team members selection */
+.team-members-selection::-webkit-scrollbar {
+    width: 6px;
+    display: block !important;
+}
+
+.team-members-selection::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 3px;
+}
+
+.team-members-selection::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.team-members-selection::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode scrollbar styling for team members selection */
+[data-theme="dark"] .team-members-selection::-webkit-scrollbar-track {
+    background: #2D2D30;
+}
+
+[data-theme="dark"] .team-members-selection::-webkit-scrollbar-thumb {
+    background-color: #505050;
+    border-radius: 6px;
+    border: 2px solid #2D2D30;
+}
+
+/* Improve the appearance of team member checkboxes */
+.team-member-checkbox {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    margin-bottom: 5px;
+}
+
+.team-member-checkbox:hover {
+    background-color: var(--background-hover);
+}
+
+.team-member-checkbox label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.team-member-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Dark mode styling for team member checkboxes */
+[data-theme="dark"] .team-member-checkbox:hover {
+    background-color: #3E3E42;
+}

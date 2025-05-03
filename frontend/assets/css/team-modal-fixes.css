@@ -1,0 +1,110 @@
+/* Team Modal Fixes */
+
+/* Fix for double scrollbar issue in team members section */
+.modal {
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.modal-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.modal-body {
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(90vh - 140px); /* Adjust based on header and footer height */
+}
+
+.modal-footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Remove scrollbar from modal container */
+.modal::-webkit-scrollbar {
+    display: none !important;
+}
+
+.modal {
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Improve team members container styling */
+#team-members-container {
+    max-height: 250px;
+    overflow-y: auto;
+    border-radius: 8px;
+    background-color: var(--background-input);
+    border: 1px solid var(--border-light);
+    padding: 5px;
+}
+
+/* Scrollbar styling for team members container */
+#team-members-container::-webkit-scrollbar {
+    width: 6px;
+    display: block !important;
+}
+
+#team-members-container::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 3px;
+}
+
+#team-members-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+#team-members-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode scrollbar styling */
+[data-theme="dark"] #team-members-container::-webkit-scrollbar-track {
+    background: #2D2D30;
+}
+
+[data-theme="dark"] #team-members-container::-webkit-scrollbar-thumb {
+    background-color: #505050;
+    border-radius: 6px;
+    border: 2px solid #2D2D30;
+}
+
+/* Improve team member selection items */
+.member-selection-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    background-color: var(--background-card);
+    border: 1px solid var(--border-light);
+    transition: all 0.2s ease;
+}
+
+.member-selection-item:hover {
+    background-color: var(--background-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.member-selection-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Dark mode styles for member items */
+[data-theme="dark"] .member-selection-item {
+    background-color: #2D2D30;
+    border-color: #3E3E42;
+}
+
+[data-theme="dark"] .member-selection-item:hover {
+    background-color: #3E3E42;
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Milestone Timeline - Planr</title>
+    <link rel="stylesheet" href="/assets/css/themes.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/notification-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/auth.css">
+    <link rel="stylesheet" href="/assets/css/user-profile.css">
+    <link rel="stylesheet" href="/assets/css/dark-mode-fix.css">
+    <link rel="stylesheet" href="/assets/css/milestones-consolidated.css">
+    <link rel="stylesheet" href="/assets/css/milestone-timeline.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Full Page Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <h1 class="logo">Planr</h1>
+        <div class="spinner"></div>
+        <p class="loading-text">Loading milestone timeline...</p>
+    </div>
+
+    <div class="app-container page-transition">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">Planr</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="/index.html">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projects.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tasks.html">
+                            <i class="fas fa-tasks"></i>
+                            <span>Tasks</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="milestones.html">
+                            <i class="fas fa-flag"></i>
+                            <span>Milestones</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="team-members.html">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Team Members</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="team.html">
+                            <i class="fas fa-users"></i>
+                            <span>Teams</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>© 2025 Planr. Developed by Hafizan.</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Milestone Timeline</h2>
+                <div class="user-profile">
+                    <button type="button" id="theme-toggle" class="theme-toggle" title="Switch to Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <span id="welcome-message">Welcome, Mohd Hafizan</span>
+                    <div class="avatar" id="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="User Avatar">
+                    </div>
+                    <button type="button" class="logout-btn" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i><span class="logout-text">Logout</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="milestone-timeline-page">
+                <div class="timeline-header-actions">
+                    <div class="timeline-back">
+                        <a href="milestones.html" class="back-link">
+                            <i class="fas fa-arrow-left"></i> Back to Milestones
+                        </a>
+                    </div>
+                    <div class="timeline-view-toggle">
+                        <button type="button" class="view-toggle-btn active" data-view="timeline">
+                            <i class="fas fa-calendar-alt"></i> Timeline View
+                        </button>
+                        <button type="button" class="view-toggle-btn" data-view="gantt">
+                            <i class="fas fa-tasks"></i> Gantt Chart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="timeline-container active" id="timeline-view">
+                    <div class="milestone-timeline-container">
+                        <h3>Project Milestones Timeline</h3>
+                        <div id="milestone-timeline-container">
+                            <!-- Timeline will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-container" id="gantt-view">
+                    <div class="milestone-gantt-container">
+                        <h3>Project Milestones Gantt Chart</h3>
+                        <div id="milestone-gantt-container">
+                            <!-- Gantt chart will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/notification.js"></script>
+    <script src="/assets/js/theme-switcher.js"></script>
+    <script src="/assets/js/projects.js"></script>
+    <script src="/assets/js/tasks-api.js"></script>
+    <script src="/assets/js/milestones-consolidated.js"></script>
+    <script src="/assets/js/milestone-timeline.js"></script>
+    <script>
+        // Direct event listener for logout button
+        window.onload = function() {
+            const logoutBtn = document.querySelector('.logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    console.log('Logout button clicked');
+                    // Show notification
+                    if (typeof showNotification === 'function') {
+                        showNotification('Logging out...', 'info');
+                    }
+
+                    // Redirect to login page
+                    setTimeout(function() {
+                        window.location.href = '/login';
+                    }, 1000);
+                });
+            }
+
+            // Initialize timeline and Gantt chart
+            initMilestoneTimeline();
+            initMilestoneGantt();
+
+            // View toggle buttons
+            const viewToggleBtns = document.querySelectorAll('.view-toggle-btn');
+            viewToggleBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    viewToggleBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    // Get view type
+                    const viewType = this.dataset.view;
+
+                    // Hide all views
+                    document.querySelectorAll('.timeline-container').forEach(container => {
+                        container.classList.remove('active');
+                    });
+
+                    // Show selected view
+                    document.getElementById(`${viewType}-view`).classList.add('active');
+                });
+            });
+
+            // Hide loading overlay
+            const loadingOverlay = document.getElementById('loading-overlay');
+            if (loadingOverlay) {
+                setTimeout(() => {
+                    loadingOverlay.style.opacity = '0';
+                    setTimeout(() => {
+                        loadingOverlay.style.display = 'none';
+                    }, 300);
+                }, 500);
+            }
+        };
+    </script>
+</body>
+</html>

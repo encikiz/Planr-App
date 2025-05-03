@@ -1,0 +1,401 @@
+/* Milestone Timeline Visualization Styles */
+
+/* Timeline Page */
+.milestone-timeline-page {
+    padding: 20px;
+}
+
+.timeline-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.timeline-back .back-link {
+    display: flex;
+    align-items: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.timeline-back .back-link:hover {
+    color: var(--primary-color);
+}
+
+.timeline-back .back-link i {
+    margin-right: 8px;
+}
+
+.timeline-view-toggle {
+    display: flex;
+    gap: 10px;
+}
+
+.view-toggle-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: var(--border-radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-light);
+    background-color: var(--background-card);
+    color: var(--text-secondary);
+}
+
+.view-toggle-btn i {
+    margin-right: 8px;
+}
+
+.view-toggle-btn:hover {
+    background-color: var(--background-hover);
+    color: var(--text-primary);
+}
+
+.view-toggle-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.timeline-container {
+    display: none;
+}
+
+.timeline-container.active {
+    display: block;
+}
+
+/* Timeline Container */
+.milestone-timeline-container,
+.milestone-gantt-container {
+    background-color: var(--background-card);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.milestone-timeline-container h3,
+.milestone-gantt-container h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: var(--text-tertiary);
+}
+
+.loading-spinner::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border: 3px solid var(--border-light);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Empty State */
+.empty-timeline,
+.empty-gantt,
+.error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.empty-timeline i,
+.empty-gantt i,
+.error-state i {
+    font-size: 48px;
+    color: var(--text-tertiary);
+    margin-bottom: 16px;
+}
+
+.error-state i {
+    color: var(--danger-color);
+}
+
+.empty-timeline h3,
+.empty-gantt h3,
+.error-state h3 {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    border-bottom: none;
+    padding: 0;
+}
+
+.empty-timeline p,
+.empty-gantt p,
+.error-state p {
+    font-size: 14px;
+    color: var(--text-tertiary);
+    max-width: 300px;
+}
+
+/* Timeline Styles */
+.milestone-timeline {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    padding-bottom: 16px;
+}
+
+.timeline-header,
+.timeline-row {
+    display: flex;
+    height: 60px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.timeline-project-label {
+    min-width: 150px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: var(--text-primary);
+    background-color: var(--background-card);
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    border-right: 1px solid var(--border-light);
+}
+
+.timeline-months {
+    display: flex;
+    height: 100%;
+}
+
+.timeline-month {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--text-secondary);
+    border-right: 1px solid var(--border-light);
+    padding: 0 8px;
+}
+
+.timeline-milestones {
+    position: relative;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.timeline-milestone {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.timeline-milestone:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.milestone-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.timeline-milestone.milestone-completed .milestone-dot {
+    background-color: var(--success-color);
+}
+
+.timeline-milestone.milestone-in-progress .milestone-dot {
+    background-color: var(--primary-color);
+}
+
+.timeline-milestone.milestone-not-started .milestone-dot {
+    background-color: var(--text-tertiary);
+}
+
+.milestone-label {
+    font-size: 12px;
+    color: var(--text-primary);
+    white-space: nowrap;
+    background-color: var(--background-card);
+    padding: 2px 6px;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Gantt Chart Styles */
+.milestone-gantt {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    padding-bottom: 16px;
+}
+
+.gantt-header,
+.gantt-row {
+    display: flex;
+    height: 60px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.gantt-project-label {
+    min-width: 150px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: var(--text-primary);
+    background-color: var(--background-card);
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    border-right: 1px solid var(--border-light);
+}
+
+.gantt-dates {
+    display: flex;
+    height: 100%;
+}
+
+.gantt-week {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--text-secondary);
+    border-right: 1px solid var(--border-light);
+}
+
+.gantt-milestones {
+    position: relative;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.gantt-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.gantt-grid-line {
+    width: 100px;
+    height: 100%;
+    border-right: 1px solid var(--border-light);
+}
+
+.gantt-milestone {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.gantt-milestone:hover {
+    transform: translateY(-50%) scale(1.05);
+}
+
+.milestone-bar {
+    width: 100px;
+    height: 16px;
+    background-color: rgba(var(--primary-color-rgb), 0.2);
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+
+.milestone-progress {
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.gantt-milestone.milestone-completed .milestone-bar {
+    background-color: rgba(var(--success-color-rgb), 0.2);
+}
+
+.gantt-milestone.milestone-completed .milestone-progress {
+    background-color: var(--success-color);
+}
+
+.gantt-milestone.milestone-not-started .milestone-bar {
+    background-color: rgba(var(--text-tertiary), 0.2);
+}
+
+.gantt-milestone.milestone-not-started .milestone-progress {
+    background-color: var(--text-tertiary);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .timeline-project-label,
+    .gantt-project-label {
+        min-width: 100px;
+    }
+
+    .milestone-label {
+        max-width: 100px;
+    }
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .timeline-project-label,
+[data-theme="dark"] .gantt-project-label {
+    border-right: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .timeline-month,
+[data-theme="dark"] .gantt-week,
+[data-theme="dark"] .gantt-grid-line {
+    border-right: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .timeline-header,
+[data-theme="dark"] .timeline-row,
+[data-theme="dark"] .gantt-header,
+[data-theme="dark"] .gantt-row {
+    border-bottom: 1px solid var(--border-color);
+}

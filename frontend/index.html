@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planr - Project Management</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/notification-enhanced.css">
+    <link rel="stylesheet" href="assets/css/quick-actions.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="assets/css/user-profile.css">
+    <link rel="stylesheet" href="assets/css/colored-metrics.css">
+    <link rel="stylesheet" href="assets/css/dark-mode-fix.css">
+    <link rel="stylesheet" href="assets/css/theme-toggle.css">
+    <link rel="stylesheet" href="assets/css/sidebar-enhanced.css">
+    <link rel="stylesheet" href="assets/css/user-profile-mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Full Page Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <h1 class="logo">Planr</h1>
+        <div class="spinner"></div>
+        <p class="loading-text">Loading your dashboard...</p>
+    </div>
+
+    <div class="app-container page-transition">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">Planr</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="index.html">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/projects.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/tasks.html">
+                            <i class="fas fa-tasks"></i>
+                            <span>Tasks</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/milestones.html">
+                            <i class="fas fa-flag"></i>
+                            <span>Milestones</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/team-members.html">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Team Members</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/team.html">
+                            <i class="fas fa-users"></i>
+                            <span>Teams</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>© 2025 Planr v0.2 developed by hafizanm@gmail.com</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Dashboard</h2>
+                <div class="user-profile">
+                    <button type="button" id="theme-toggle" class="theme-toggle" title="Switch to Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <span>Welcome, Admin</span>
+                    <div class="avatar">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="Admin">
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-container">
+                <section class="quick-actions-container">
+                    <div class="quick-actions-header">
+                        <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+                    </div>
+                    <div class="quick-actions-grid">
+                        <a href="pages/projects.html#new-project" class="quick-action-card">
+                            <div class="quick-action-icon">
+                                <i class="fas fa-diagram-project"></i>
+                            </div>
+                            <div class="quick-action-title">New Project</div>
+                        </a>
+                        <a href="pages/tasks.html#new-task" class="quick-action-card">
+                            <div class="quick-action-icon">
+                                <i class="fas fa-list-check"></i>
+                            </div>
+                            <div class="quick-action-title">New Task</div>
+                        </a>
+                        <a href="pages/milestones.html#new-milestone" class="quick-action-card">
+                            <div class="quick-action-icon">
+                                <i class="fas fa-flag"></i>
+                            </div>
+                            <div class="quick-action-title">New Milestone</div>
+                        </a>
+                        <a href="pages/team-members.html#new-member" class="quick-action-card">
+                            <div class="quick-action-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="quick-action-title">Add Team Member</div>
+                        </a>
+                        <a href="pages/team.html#new-team" class="quick-action-card">
+                            <div class="quick-action-icon">
+                                <i class="fas fa-people-group"></i>
+                            </div>
+                            <div class="quick-action-title">Create Team</div>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="metrics-section">
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3>Active Projects</h3>
+                            <p class="metric-value" id="active-projects-count">0</p>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3>Completed Tasks</h3>
+                            <p class="metric-value" id="completed-tasks-count">0</p>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-user-clock"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3>Team Members</h3>
+                            <p class="metric-value" id="team-members-count">0</p>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-hourglass-half"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3>Avg. Completion</h3>
+                            <p class="metric-value" id="avg-completion">0%</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="projects-overview">
+                    <div class="section-header">
+                        <h3>Project Overview</h3>
+                        <a href="pages/projects.html" class="view-all">View All</a>
+                    </div>
+
+                    <div class="projects-grid" id="projects-grid">
+                        <!-- Projects will be loaded here dynamically -->
+                        <div class="loading">Loading projects...</div>
+                    </div>
+                </section>
+
+                <section class="progress-visualization">
+                    <div class="section-header">
+                        <h3>Progress Overview</h3>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="progress-chart" aria-label="Project progress chart" role="img"></canvas>
+                    </div>
+                </section>
+
+                <section class="recent-activity">
+                    <div class="section-header">
+                        <h3>Recent Activity</h3>
+                    </div>
+
+                    <div class="activity-list" id="activity-list">
+                        <!-- Activity items will be loaded here dynamically -->
+                        <div class="loading">Loading activity...</div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/notification.js"></script>
+    <script src="assets/js/theme-switcher.js"></script>
+    <script src="assets/js/dashboard-api.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

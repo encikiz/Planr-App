@@ -1,0 +1,566 @@
+/* Theme Variables for Planr */
+
+/* Light Theme (Default) */
+:root {
+  /* Base Colors */
+  --primary-color: #0D8ABC;
+  --primary-color-rgb: 13, 138, 188; /* RGB values for primary color */
+  --primary-light: #E1F5FE;
+  --primary-dark: #0A6A8F;
+
+  --success-color: #34C759;
+  --success-light: #E8F8EF;
+  --success-dark: #28A745;
+
+  --warning-color: #FF9500;
+  --warning-light: #FFF4E5;
+  --warning-dark: #F57C00;
+
+  --danger-color: #FF3B30;
+  --danger-light: #FFEBEE;
+  --danger-dark: #D32F2F;
+
+  --info-color: #5856D6;
+  --info-light: #EEF2FF;
+  --info-dark: #3F51B5;
+
+  /* Background Colors */
+  --background-main: #EEEEF2;
+  --background-alt: #F0F2F5;
+  --background-hover: #E8EDF2;
+  --background-card: #FFFFFF;
+
+  /* Text Colors */
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --text-light: #FFFFFF;
+
+  /* Border Colors */
+  --border-color: #DDDDDD;
+  --border-light: #EEEEEE;
+
+  /* Shadow */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+  /* Other */
+  --sidebar-width: 240px;
+  --header-height: 60px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Theme Transition */
+  --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Light mode scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Dark Theme - Based on VS Code Dark+ Theme */
+[data-theme="dark"] {
+  /* Base Colors */
+  --primary-color: #3794FF; /* VS Code blue accent color */
+  --primary-color-rgb: 55, 148, 255; /* RGB values for primary color */
+  --primary-light: #1C3252; /* Deeper blue for backgrounds */
+  --primary-dark: #89BEFF; /* Lighter blue for highlights */
+
+  --success-color: #89D185; /* VS Code green */
+  --success-light: #1E392E; /* Deep green background */
+  --success-dark: #B5CEA8; /* Light green for highlights */
+
+  --warning-color: #CCA700; /* VS Code yellow/amber */
+  --warning-light: #352D1A; /* Deep amber background */
+  --warning-dark: #DCDCAA; /* Light amber for highlights */
+
+  --danger-color: #F14C4C; /* VS Code red */
+  --danger-light: #3E2222; /* Deep red background */
+  --danger-dark: #CE9178; /* Light red for highlights */
+
+  /* Background Colors */
+  --background-main: #1E1E1E; /* Main background */
+  --background-alt: #252526; /* Alternative background */
+  --background-hover: #2D2D30; /* Hover background */
+  --background-card: #2D2D30; /* Card background */
+
+  /* Text Colors */
+  --text-primary: #E8E8E8; /* Primary text */
+  --text-secondary: #BBBBBB; /* Secondary text */
+  --text-tertiary: #888888; /* Tertiary text */
+
+  /* Border Colors */
+  --border-color: #3C3C3C; /* Main border color */
+  --border-light: #505050; /* Light border color */
+
+  --info-color: #9CDCFE; /* VS Code light blue */
+  --info-light: #1C2736; /* Deep blue background */
+  --info-dark: #75BEFF; /* Light blue for highlights */
+
+  /* Background Colors */
+  --background-main: #1E1E1E; /* VS Code main background */
+  --background-alt: #252526; /* VS Code secondary background */
+  --background-hover: #2D2D30; /* VS Code hover state */
+  --background-card: #252526; /* Card background */
+
+  /* Text Colors */
+  --text-primary: #CCCCCC; /* VS Code primary text */
+  --text-secondary: #9D9D9D; /* VS Code secondary text */
+  --text-tertiary: #6A6A6A; /* VS Code tertiary text */
+  --text-light: #FFFFFF; /* Pure white */
+
+  /* Border Colors */
+  --border-color: #3E3E42; /* VS Code border color */
+  --border-light: #505050; /* Lighter border color */
+
+  /* Shadow */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  margin-right: 10px;
+}
+
+.theme-toggle:hover {
+  background-color: var(--background-hover);
+}
+
+/* Apply transitions to elements */
+body,
+.sidebar,
+.main-content,
+.card,
+button,
+input,
+select,
+textarea,
+.modal-container,
+.project-item,
+.task-item,
+.team-member,
+.metric-card {
+  transition: var(--theme-transition);
+}
+
+/* Dark Mode Specific Enhancements - VS Code Inspired */
+[data-theme="dark"] body {
+  background-color: #1E1E1E;
+}
+
+[data-theme="dark"] .sidebar {
+  background-color: #252526;
+  border-right: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .main-content {
+  background-color: #1E1E1E;
+}
+
+[data-theme="dark"] .sidebar-nav ul li a:hover {
+  background-color: rgba(55, 148, 255, 0.15);
+}
+
+[data-theme="dark"] .sidebar-nav ul li.active a {
+  background-color: rgba(55, 148, 255, 0.2);
+  border-right: 3px solid var(--primary-color);
+}
+
+[data-theme="dark"] .metric-card {
+  background-color: #2D2D30;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .metric-icon {
+  background-color: rgba(55, 148, 255, 0.2);
+}
+
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .task-item,
+[data-theme="dark"] .team-member,
+[data-theme="dark"] .projects-container,
+[data-theme="dark"] .tasks-container,
+[data-theme="dark"] .team-container,
+[data-theme="dark"] .metric-card {
+  background-color: #2D2D30;
+  border: none;
+}
+
+[data-theme="dark"] .projects-overview,
+[data-theme="dark"] .dashboard-container,
+[data-theme="dark"] .project-overview-container,
+[data-theme="dark"] .progress-overview-container {
+  background-color: #2D2D30;
+  border: none;
+}
+
+[data-theme="dark"] .project-card:hover,
+[data-theme="dark"] .task-item:hover,
+[data-theme="dark"] .team-member:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .filters-section,
+[data-theme="dark"] .view-options {
+  background-color: #252526;
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background-color: #3C3C3C;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(55, 148, 255, 0.25);
+}
+
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .new-project-btn,
+[data-theme="dark"] .new-task-btn,
+[data-theme="dark"] .new-member-btn,
+[data-theme="dark"] .new-team-btn {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+}
+
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .new-project-btn:hover,
+[data-theme="dark"] .new-task-btn:hover,
+[data-theme="dark"] .new-member-btn:hover,
+[data-theme="dark"] .new-team-btn:hover {
+  background-color: #4DA0FF;
+  box-shadow: 0 2px 8px rgba(55, 148, 255, 0.5);
+}
+
+[data-theme="dark"] .status-completed {
+  background-color: var(--success-light);
+  color: var(--success-dark);
+}
+
+[data-theme="dark"] .status-in-progress {
+  background-color: var(--warning-light);
+  color: var(--warning-dark);
+}
+
+[data-theme="dark"] .status-not-started {
+  background-color: var(--info-light);
+  color: var(--info-dark);
+}
+
+/* Additional dark mode enhancements - VS Code inspired */
+[data-theme="dark"] .content-header {
+  background-color: #1E1E1E;
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .modal-container {
+  background-color: #252526;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .modal-header {
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .close-modal {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .close-modal:hover {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .task-group-header {
+  background-color: #252526;
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .task-group-header .count {
+  background-color: rgba(55, 148, 255, 0.2);
+  color: var(--primary-color);
+}
+
+[data-theme="dark"] .task-board {
+  background-color: #2D2D30;
+}
+
+[data-theme="dark"] .board-header {
+  background-color: #252526;
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .board-task {
+  background-color: #333333;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .board-task:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-color: var(--primary-color);
+}
+
+[data-theme="dark"] .loading-overlay {
+  background-color: #1E1E1E;
+}
+
+[data-theme="dark"] .spinner {
+  border-top-color: var(--primary-color);
+}
+
+/* Additional VS Code specific styles */
+[data-theme="dark"] .logo {
+  color: #3794FF;
+}
+
+[data-theme="dark"] .logo::after {
+  background-color: #3794FF;
+}
+
+[data-theme="dark"] .section-header h3::after {
+  background-color: #3794FF;
+}
+
+[data-theme="dark"] .content-header h2::after {
+  background-color: #3794FF;
+}
+
+[data-theme="dark"] .content-header h2 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .content-header .settings-icon {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .content-header .settings-icon:hover {
+  color: var(--text-primary);
+}
+
+/* Fix for white backgrounds in dark mode */
+[data-theme="dark"] .projects-section,
+[data-theme="dark"] .tasks-section,
+[data-theme="dark"] .team-section,
+[data-theme="dark"] .metrics-section,
+[data-theme="dark"] .dashboard-metrics,
+[data-theme="dark"] .project-overview,
+[data-theme="dark"] .progress-overview {
+  background-color: #1E1E1E;
+  border: none;
+  outline: none;
+}
+
+[data-theme="dark"] .project-list,
+[data-theme="dark"] .task-list,
+[data-theme="dark"] .team-list {
+  background-color: #1E1E1E;
+}
+
+[data-theme="dark"] .projects-grid {
+  background-color: #1E1E1E;
+}
+
+[data-theme="dark"] .filters-section {
+  background-color: #252526;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Ensure all containers have dark backgrounds */
+[data-theme="dark"] .container,
+[data-theme="dark"] .app-container,
+[data-theme="dark"] .content-wrapper {
+  background-color: #1E1E1E;
+}
+
+/* Fix for chart colors in dark mode */
+[data-theme="dark"] canvas {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+/* Project cards specific styling */
+[data-theme="dark"] .project-card {
+  background-color: #2D2D30;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .project-card h4 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .project-card p {
+  color: var(--text-secondary);
+}
+
+/* Status badges */
+[data-theme="dark"] .status-in-progress {
+  background-color: #1C3252;
+  color: #3794FF;
+}
+
+[data-theme="dark"] .status-planning {
+  background-color: #352D1A;
+  color: #DCDCAA;
+}
+
+[data-theme="dark"] .status-completed {
+  background-color: #1E392E;
+  color: #89D185;
+}
+
+[data-theme="dark"] .status-not-started {
+  background-color: #333333;
+  color: #9D9D9D;
+}
+
+/* Progress bars */
+[data-theme="dark"] .progress-bar {
+  background-color: #3C3C3C;
+}
+
+[data-theme="dark"] .progress-bar-fill {
+  background-color: #3794FF;
+}
+
+/* Search inputs */
+[data-theme="dark"] .search-input,
+[data-theme="dark"] input[type="search"],
+[data-theme="dark"] input[type="text"] {
+  background-color: #3C3C3C;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .search-input::placeholder,
+[data-theme="dark"] input[type="search"]::placeholder,
+[data-theme="dark"] input[type="text"]::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* Dropdowns and selects */
+[data-theme="dark"] select,
+[data-theme="dark"] .dropdown-menu {
+  background-color: #3C3C3C;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] option {
+  background-color: #3C3C3C;
+  color: var(--text-primary);
+}
+
+/* Project page specific styles */
+[data-theme="dark"] .new-project-btn {
+  background-color: #3794FF;
+  color: white;
+  border: none;
+}
+
+/* Remove all outlines in dark mode */
+[data-theme="dark"] .project-overview-container,
+[data-theme="dark"] .progress-overview-container,
+[data-theme="dark"] .projects-grid,
+[data-theme="dark"] .project-item {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .new-project-btn:hover {
+  background-color: #4DA0FF;
+  box-shadow: 0 2px 8px rgba(55, 148, 255, 0.5);
+}
+
+[data-theme="dark"] .projects-container {
+  background-color: #1E1E1E;
+  border: none;
+}
+
+[data-theme="dark"] .filters-section {
+  background-color: #252526;
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .project-grid {
+  background-color: #1E1E1E;
+}
+
+/* Fix for any remaining white backgrounds */
+[data-theme="dark"] * {
+  /* Using compatible scrollbar styling */
+  /* scrollbar-color property removed due to compatibility issues */
+}
+
+/* Remove all borders and outlines from dashboard elements */
+[data-theme="dark"] .dashboard-container > *,
+[data-theme="dark"] .projects-overview,
+[data-theme="dark"] .progress-overview,
+[data-theme="dark"] .project-overview,
+[data-theme="dark"] .project-grid,
+[data-theme="dark"] .project-item {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #2D2D30;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #505050;
+  border-radius: 5px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #666666;
+}

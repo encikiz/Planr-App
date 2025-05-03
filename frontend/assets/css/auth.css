@@ -1,0 +1,93 @@
+/* Authentication related styles */
+
+/* Guest badge */
+.guest-badge {
+    display: inline-block;
+    background-color: var(--text-secondary);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* Logout button */
+.logout-btn {
+    background-color: #ff6b6b; /* Light red background */
+    border: none;
+    color: white !important; /* Force white text color */
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    margin-left: 15px;
+    border-radius: 8px;
+    min-width: 40px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logout-btn:hover {
+    background-color: #ff5252; /* Darker red on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.logout-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide logout text on smaller screens */
+.logout-btn .logout-text {
+    display: none;
+    color: white !important;
+}
+
+/* Add text to logout button on larger screens */
+@media (min-width: 768px) {
+    .logout-btn {
+        min-width: auto;
+        padding: 8px 15px;
+    }
+
+    .logout-btn .logout-text {
+        display: inline-block;
+        margin-left: 8px;
+    }
+}
+
+/* Dark mode styles for logout button */
+[data-theme="dark"] .logout-btn {
+    background-color: #d64545; /* Darker red for dark mode */
+    color: #fff;
+}
+
+[data-theme="dark"] .logout-btn:hover {
+    background-color: #c53030; /* Even darker red on hover in dark mode */
+}
+
+/* Disabled buttons for guest users */
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed !important;
+    pointer-events: none;
+}
+
+button.disabled:hover {
+    background-color: var(--button-bg) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+a.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Login page styles are in login.css */

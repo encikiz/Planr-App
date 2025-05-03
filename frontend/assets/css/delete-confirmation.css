@@ -1,0 +1,58 @@
+/* Delete Confirmation Dialog Styling */
+
+.delete-confirmation {
+    text-align: center;
+    padding: 20px;
+}
+
+.delete-confirmation .warning-icon {
+    font-size: 48px;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+}
+
+.delete-confirmation p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.delete-confirmation .warning-text {
+    color: #ff4d4d;
+    font-size: 14px;
+}
+
+.modal-footer .delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-footer .delete-btn:hover {
+    background-color: #ff3333;
+}
+
+.modal-footer .delete-btn:disabled {
+    background-color: #ff8080;
+    cursor: not-allowed;
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .delete-confirmation .warning-text {
+    color: #ff6666;
+}
+
+[data-theme="dark"] .modal-footer .delete-btn {
+    background-color: #cc3333;
+}
+
+[data-theme="dark"] .modal-footer .delete-btn:hover {
+    background-color: #e63939;
+}
+
+[data-theme="dark"] .modal-footer .delete-btn:disabled {
+    background-color: #994d4d;
+}

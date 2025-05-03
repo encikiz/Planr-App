@@ -1,0 +1,643 @@
+/* Enhanced Dark Mode for Tasks Page */
+
+/* Base dark mode styles */
+[data-theme="dark"] body {
+  background-color: #1E1E1E;
+  color: #E8E8E8;
+}
+
+[data-theme="dark"] .app-container {
+  background-color: #1E1E1E;
+}
+
+/* Content header */
+[data-theme="dark"] .content-header {
+  background-color: #1E1E1E;
+  border-bottom: 1px solid #333333;
+}
+
+/* Improve the overall dark mode appearance for the Tasks page */
+[data-theme="dark"] .tasks-container {
+  background-color: #1E1E1E;
+  color: #E8E8E8;
+}
+
+/* Task Analytics Section */
+[data-theme="dark"] .task-analytics .metrics-row {
+  gap: 15px;
+}
+
+[data-theme="dark"] .task-analytics .metric-card {
+  background-color: #2D2D30;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+[data-theme="dark"] .task-analytics .metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background-color: #333337;
+}
+
+[data-theme="dark"] .metric-icon {
+  background-color: rgba(55, 148, 255, 0.15);
+  color: #3794FF;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 20px;
+}
+
+[data-theme="dark"] .metric-content {
+  margin-left: 12px;
+}
+
+[data-theme="dark"] .metric-content h3 {
+  color: #BBBBBB;
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .metric-value {
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Customize metric icons by type */
+[data-theme="dark"] .metric-icon .fa-clipboard-list {
+  color: #3794FF;
+}
+
+[data-theme="dark"] .metric-icon .fa-spinner {
+  color: #CCA700;
+}
+
+[data-theme="dark"] .metric-icon .fa-check-circle {
+  color: #89D185;
+}
+
+[data-theme="dark"] .metric-icon .fa-exclamation-circle {
+  color: #F14C4C;
+}
+
+/* Customize metric cards by type */
+[data-theme="dark"] .metric-card:nth-child(1) .metric-icon {
+  background-color: rgba(55, 148, 255, 0.15);
+}
+
+[data-theme="dark"] .metric-card:nth-child(2) .metric-icon {
+  background-color: rgba(204, 167, 0, 0.15);
+}
+
+[data-theme="dark"] .metric-card:nth-child(3) .metric-icon {
+  background-color: rgba(137, 209, 133, 0.15);
+}
+
+[data-theme="dark"] .metric-card:nth-child(4) .metric-icon {
+  background-color: rgba(241, 76, 76, 0.15);
+}
+
+/* Task Filters Section */
+[data-theme="dark"] .filters-section {
+  background-color: #2D2D30 !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+/* Improve the new task button */
+[data-theme="dark"] .new-task-btn {
+  background-color: #3794FF;
+  color: #FFFFFF;
+  border: none;
+  box-shadow: none;
+  transition: all 0.2s ease;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+[data-theme="dark"] .new-task-btn:hover {
+  background-color: #4DA0FF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(55, 148, 255, 0.4);
+}
+
+/* Enhance select dropdowns */
+[data-theme="dark"] select,
+[data-theme="dark"] .filter-group select,
+[data-theme="dark"] #sort-by,
+[data-theme="dark"] #group-by {
+  background-color: #333337;
+  color: #FFFFFF;
+  border: 1px solid #444444;
+  box-shadow: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-weight: 500;
+}
+
+[data-theme="dark"] select:focus,
+[data-theme="dark"] .filter-group select:focus,
+[data-theme="dark"] #sort-by:focus,
+[data-theme="dark"] #group-by:focus {
+  border-color: #3794FF;
+  box-shadow: 0 0 0 2px rgba(55, 148, 255, 0.25);
+  outline: none;
+}
+
+[data-theme="dark"] option {
+  background-color: #333337;
+  color: #FFFFFF;
+  padding: 8px;
+}
+
+/* Improve search box */
+[data-theme="dark"] .search-box {
+  position: relative;
+}
+
+[data-theme="dark"] .search-box input {
+  background-color: #333337;
+  color: #FFFFFF;
+  border: 1px solid #444444;
+  border-radius: 6px;
+  padding: 10px 12px 10px 36px;
+  font-weight: 500;
+  width: 100%;
+}
+
+[data-theme="dark"] .search-box input:focus {
+  border-color: #3794FF;
+  box-shadow: 0 0 0 2px rgba(55, 148, 255, 0.25);
+  outline: none;
+}
+
+[data-theme="dark"] .search-box::before {
+  color: #AAAAAA;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* View Options */
+[data-theme="dark"] .view-options {
+  background-color: #2D2D30 !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 15px;
+}
+
+[data-theme="dark"] .view-btn {
+  background-color: #333337;
+  border: 1px solid #444444;
+  color: #BBBBBB;
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .view-btn:hover {
+  background-color: #444444;
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .view-btn.active {
+  background-color: #3794FF;
+  color: #FFFFFF;
+  border-color: #3794FF;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .sort-label,
+[data-theme="dark"] .group-label {
+  color: #BBBBBB;
+}
+
+/* Task List View */
+[data-theme="dark"] .list-view .tasks-list {
+  background-color: #2D2D30;
+  border: none;
+  box-shadow: none;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Task Group Header */
+[data-theme="dark"] .task-group-header {
+  background-color: #333337;
+  border-bottom: 1px solid #444444;
+  color: #FFFFFF;
+  padding: 12px 16px;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .task-group-header .count {
+  background-color: rgba(55, 148, 255, 0.15);
+  color: #3794FF;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Task Item */
+[data-theme="dark"] .task-item {
+  background-color: #2D2D30;
+  border-bottom: 1px solid #444444;
+  transition: all 0.2s ease;
+  padding: 16px;
+}
+
+[data-theme="dark"] .task-item:hover {
+  background-color: #333337;
+  transform: translateX(3px);
+  box-shadow: -3px 0 0 0 #3794FF;
+}
+
+[data-theme="dark"] .task-checkbox input[type="checkbox"] {
+  accent-color: #3794FF;
+}
+
+[data-theme="dark"] .task-content h5 {
+  color: #FFFFFF;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+[data-theme="dark"] .task-content p {
+  color: #BBBBBB;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Task Meta */
+[data-theme="dark"] .task-project {
+  background-color: rgba(55, 148, 255, 0.15);
+  color: #3794FF;
+}
+
+/* Task Progress */
+[data-theme="dark"] .task-progress-label {
+  color: #9D9D9D;
+}
+
+[data-theme="dark"] .task-progress-bar {
+  background-color: #3C3C3C;
+}
+
+[data-theme="dark"] .task-progress-fill {
+  background: linear-gradient(to right, #3794FF, #4DA0FF);
+}
+
+[data-theme="dark"] .board-task-progress-bar {
+  background-color: #3C3C3C;
+}
+
+[data-theme="dark"] .board-task-progress-fill {
+  background: linear-gradient(to right, #3794FF, #4DA0FF);
+}
+
+[data-theme="dark"] .board-task-progress-value {
+  color: #9D9D9D;
+}
+
+/* Status badges */
+[data-theme="dark"] .status-completed {
+  background-color: rgba(137, 209, 133, 0.2);
+  color: #89D185;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .status-in-progress {
+  background-color: rgba(204, 167, 0, 0.2);
+  color: #CCA700;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .status-not-started {
+  background-color: rgba(156, 220, 254, 0.2);
+  color: #9CDCFE;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Priority indicators */
+[data-theme="dark"] .priority-high {
+  color: #F14C4C;
+  font-weight: 500;
+  background-color: rgba(241, 76, 76, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .priority-medium {
+  color: #CCA700;
+  font-weight: 500;
+  background-color: rgba(204, 167, 0, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .priority-low {
+  color: #89D185;
+  font-weight: 500;
+  background-color: rgba(137, 209, 133, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .task-due {
+  color: #BBBBBB;
+}
+
+[data-theme="dark"] .task-due.overdue {
+  color: #F14C4C;
+}
+
+/* Assigned avatars */
+[data-theme="dark"] .assigned-label {
+  color: #BBBBBB;
+}
+
+[data-theme="dark"] .assigned-avatars .avatar {
+  border: 2px solid #2D2D30;
+}
+
+/* Task actions */
+[data-theme="dark"] .task-edit-btn {
+  color: #3794FF;
+}
+
+[data-theme="dark"] .task-edit-btn:hover {
+  background-color: rgba(55, 148, 255, 0.15);
+}
+
+[data-theme="dark"] .task-delete-btn {
+  color: #F14C4C;
+}
+
+[data-theme="dark"] .task-delete-btn:hover {
+  background-color: rgba(241, 76, 76, 0.15);
+}
+
+/* Board View */
+[data-theme="dark"] .task-board {
+  background-color: #252526;
+  border: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .board-header {
+  background-color: #2D2D30;
+  border-bottom: 1px solid #3C3C3C;
+}
+
+[data-theme="dark"] .board-title {
+  color: #E8E8E8;
+}
+
+[data-theme="dark"] .board-count {
+  background-color: rgba(55, 148, 255, 0.15);
+  color: #3794FF;
+}
+
+[data-theme="dark"] .board-tasks {
+  background-color: #252526;
+}
+
+[data-theme="dark"] .board-task {
+  background-color: #2D2D30;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-left: 3px solid #3C3C3C;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .board-task:hover {
+  background-color: #333337;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-left-color: #3794FF;
+}
+
+/* Priority-specific board tasks */
+[data-theme="dark"] .board-task.priority-high {
+  border-left-color: #F14C4C;
+}
+
+[data-theme="dark"] .board-task.priority-medium {
+  border-left-color: #CCA700;
+}
+
+[data-theme="dark"] .board-task.priority-low {
+  border-left-color: #89D185;
+}
+
+[data-theme="dark"] .board-task h5 {
+  color: #E8E8E8;
+}
+
+[data-theme="dark"] .board-task-meta {
+  border-top: 1px solid #3C3C3C;
+  padding-top: 8px;
+}
+
+[data-theme="dark"] .board-task-due {
+  color: #BBBBBB;
+}
+
+[data-theme="dark"] .board-task-due.overdue {
+  color: #F14C4C;
+}
+
+[data-theme="dark"] .board-task-assignees .avatar {
+  border: 2px solid #2D2D30;
+}
+
+/* Empty State */
+[data-theme="dark"] .empty-state {
+  background-color: #2D2D30;
+  border: 1px dashed #505050;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  border-radius: 8px;
+}
+
+[data-theme="dark"] .empty-state i {
+  color: #3794FF;
+  opacity: 0.7;
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+[data-theme="dark"] .empty-state h3 {
+  color: #E8E8E8;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+[data-theme="dark"] .empty-state p {
+  color: #BBBBBB;
+  font-size: 14px;
+  max-width: 300px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Scrollbars */
+[data-theme="dark"] .board-tasks::-webkit-scrollbar-track {
+  background: #252526;
+}
+
+[data-theme="dark"] .board-tasks::-webkit-scrollbar-thumb {
+  background-color: #505050;
+  border-radius: 6px;
+  border: 2px solid #252526;
+}
+
+[data-theme="dark"] .task-boards::-webkit-scrollbar-track {
+  background: #1E1E1E;
+}
+
+[data-theme="dark"] .task-boards::-webkit-scrollbar-thumb {
+  background-color: #505050;
+  border-radius: 6px;
+  border: 2px solid #1E1E1E;
+}
+
+/* Add subtle hover effects */
+[data-theme="dark"] .task-item,
+[data-theme="dark"] .board-task {
+  transition: all 0.2s ease;
+}
+
+/* Add subtle accent line to task boards */
+[data-theme="dark"] .task-board {
+  position: relative;
+}
+
+[data-theme="dark"] .task-board::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #3794FF;
+  border-radius: 6px 6px 0 0;
+}
+
+/* Status-specific board headers */
+[data-theme="dark"] .task-board.not-started::before {
+  background-color: #9CDCFE;
+}
+
+[data-theme="dark"] .task-board.in-progress::before {
+  background-color: #CCA700;
+}
+
+[data-theme="dark"] .task-board.completed::before {
+  background-color: #89D185;
+}
+
+/* Fix for any remaining white backgrounds */
+[data-theme="dark"] body,
+[data-theme="dark"] .app-container,
+[data-theme="dark"] .main-content,
+[data-theme="dark"] .content-header,
+[data-theme="dark"] .tasks-container,
+[data-theme="dark"] .task-analytics,
+[data-theme="dark"] .tasks-list,
+[data-theme="dark"] .task-item,
+[data-theme="dark"] .task-boards,
+[data-theme="dark"] .task-board,
+[data-theme="dark"] .board-tasks,
+[data-theme="dark"] .board-task {
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+}
+
+/* Override specific elements with different background colors */
+[data-theme="dark"] .metric-card {
+  background-color: #2D2D30;
+}
+
+/* Ensure filter sections have dark backgrounds */
+[data-theme="dark"] .filters-section,
+[data-theme="dark"] .view-options,
+[data-theme="dark"] .task-header-actions,
+[data-theme="dark"] .filter-options,
+[data-theme="dark"] .search-box,
+[data-theme="dark"] .view-toggle,
+[data-theme="dark"] .sort-options,
+[data-theme="dark"] .group-options {
+  background-color: #2D2D30 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Force all child elements to inherit background color */
+[data-theme="dark"] .filters-section *:not(select):not(input):not(button),
+[data-theme="dark"] .view-options *:not(select):not(input):not(button),
+[data-theme="dark"] .filter-group,
+[data-theme="dark"] .task-header-actions,
+[data-theme="dark"] .filter-options,
+[data-theme="dark"] .view-toggle,
+[data-theme="dark"] .sort-options,
+[data-theme="dark"] .group-options {
+  background-color: #2D2D30 !important;
+}
+
+/* Ensure labels have proper color */
+[data-theme="dark"] .sort-label,
+[data-theme="dark"] .group-label {
+  color: #BBBBBB !important;
+}
+
+[data-theme="dark"] .tasks-list {
+  background-color: #2D2D30;
+}
+
+[data-theme="dark"] .task-item {
+  background-color: #2D2D30;
+}
+
+/* Scrollbar styling with cross-browser support */
+[data-theme="dark"] *::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+[data-theme="dark"] *::-webkit-scrollbar-track {
+  background: #1E1E1E;
+}
+
+[data-theme="dark"] *::-webkit-scrollbar-thumb {
+  background-color: #505050;
+  border-radius: 6px;
+  border: 2px solid #1E1E1E;
+}
+
+[data-theme="dark"] *::-webkit-scrollbar-thumb:hover {
+  background-color: #666666;
+}

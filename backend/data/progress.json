@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "projectId": 1,
+    "weeklyProgress": [
+      {"week": "Week 1", "completed": 10, "planned": 15},
+      {"week": "Week 2", "completed": 18, "planned": 20},
+      {"week": "Week 3", "completed": 25, "planned": 30},
+      {"week": "Week 4", "completed": 35, "planned": 40},
+      {"week": "Week 5", "completed": 45, "planned": 50},
+      {"week": "Week 6", "completed": 55, "planned": 60},
+      {"week": "Week 7", "completed": 65, "planned": 70}
+    ]
+  },
+  {
+    "id": 2,
+    "projectId": 2,
+    "weeklyProgress": [
+      {"week": "Week 1", "completed": 5, "planned": 10},
+      {"week": "Week 2", "completed": 12, "planned": 15},
+      {"week": "Week 3", "completed": 20, "planned": 25},
+      {"week": "Week 4", "completed": 28, "planned": 35},
+      {"week": "Week 5", "completed": 35, "planned": 45},
+      {"week": "Week 6", "completed": 40, "planned": 55}
+    ]
+  },
+  {
+    "id": 3,
+    "projectId": 3,
+    "weeklyProgress": [
+      {"week": "Week 1", "completed": 5, "planned": 10},
+      {"week": "Week 2", "completed": 10, "planned": 15},
+      {"week": "Week 3", "completed": 15, "planned": 25}
+    ]
+  },
+  {
+    "id": 4,
+    "projectId": 4,
+    "weeklyProgress": []
+  },
+  {
+    "id": 5,
+    "projectId": 5,
+    "weeklyProgress": [
+      {"week": "Week 1", "completed": 15, "planned": 15},
+      {"week": "Week 2", "completed": 30, "planned": 30},
+      {"week": "Week 3", "completed": 50, "planned": 45},
+      {"week": "Week 4", "completed": 70, "planned": 65},
+      {"week": "Week 5", "completed": 85, "planned": 80},
+      {"week": "Week 6", "completed": 100, "planned": 100}
+    ]
+  }
+]

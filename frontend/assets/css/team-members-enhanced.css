@@ -1,0 +1,494 @@
+/* Enhanced Team Member Section Styling */
+
+/* Team member card styling */
+.team-card {
+    display: flex !important;
+    align-items: center !important;
+    padding: 15px !important;
+    margin-bottom: 10px !important;
+    background-color: var(--card-color) !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--border-light) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.2s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.team-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    border-color: rgba(13, 138, 188, 0.3) !important;
+}
+
+.team-card.selected {
+    border-left: 4px solid var(--primary-color) !important;
+    background-color: rgba(13, 138, 188, 0.05) !important;
+}
+
+/* Avatar styling */
+.member-avatar {
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    margin-right: 15px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    border: 2px solid white !important;
+    flex-shrink: 0 !important;
+}
+
+.member-avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+/* Member info styling */
+.member-info {
+    flex: 1 !important;
+    overflow: hidden !important;
+}
+
+.member-name {
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: var(--text-primary) !important;
+    margin: 0 0 4px 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.member-role {
+    font-size: 14px !important;
+    color: var(--text-secondary) !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.member-department {
+    font-size: 12px !important;
+    color: var(--text-tertiary) !important;
+    margin: 4px 0 0 0 !important;
+    padding: 2px 8px !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    border-radius: 12px !important;
+    display: inline-block !important;
+}
+
+/* Department color indicators */
+.department-indicator {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 4px !important;
+}
+
+.department-Engineering {
+    background-color: #3498db !important;
+}
+
+.department-Design {
+    background-color: #9b59b6 !important;
+}
+
+.department-Product {
+    background-color: #2ecc71 !important;
+}
+
+.department-Marketing {
+    background-color: #e74c3c !important;
+}
+
+.department-IT {
+    background-color: #f39c12 !important;
+}
+
+.department-UX {
+    background-color: #1abc9c !important;
+}
+
+.department-Database {
+    background-color: #34495e !important;
+}
+
+.department-Frontend {
+    background-color: #16a085 !important;
+}
+
+.department-Backend {
+    background-color: #2980b9 !important;
+}
+
+/* Member actions */
+.member-actions {
+    display: flex !important;
+    gap: 5px !important;
+    opacity: 0 !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.team-card:hover .member-actions {
+    opacity: 1 !important;
+}
+
+.member-action-btn {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease !important;
+    color: var(--text-tertiary) !important;
+}
+
+.member-action-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: var(--primary-color) !important;
+}
+
+/* New member button styling */
+.new-member-btn {
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+    border-radius: 4px !important;
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.new-member-btn:hover {
+    background-color: var(--primary-dark) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Team grid styling */
+.team-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    padding: 15px !important;
+    background-color: var(--background-color) !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--border-light) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    max-height: none !important; /* Remove height restriction to show all members */
+    overflow-y: visible !important; /* Change to visible since we don't need scrolling */
+}
+
+/* Add member button */
+.add-member-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 15px !important;
+    background-color: rgba(13, 138, 188, 0.05) !important;
+    border: 1px dashed var(--border-color) !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    margin-top: 10px !important;
+    color: var(--text-secondary) !important;
+    gap: 8px !important;
+}
+
+.add-member-btn:hover {
+    background-color: rgba(13, 138, 188, 0.1) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+/* Empty state styling */
+.empty-members {
+    padding: 30px !important;
+    text-align: center !important;
+    color: var(--text-tertiary) !important;
+}
+
+.empty-members i {
+    font-size: 48px !important;
+    margin-bottom: 15px !important;
+    color: var(--border-color) !important;
+}
+
+.empty-members h4 {
+    margin: 0 0 10px 0 !important;
+    color: var(--text-secondary) !important;
+}
+
+.empty-members p {
+    margin: 0 0 20px 0 !important;
+}
+
+/* Team member details container */
+.team-member-details-container {
+    background-color: var(--card-color) !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--border-light) !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05) !important;
+    padding: 20px !important;
+}
+
+/* Team member details header */
+.member-header {
+    display: flex !important;
+    align-items: center !important;
+    padding-bottom: 20px !important;
+    margin-bottom: 20px !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+.member-header .member-avatar {
+    width: 80px !important;
+    height: 80px !important;
+    margin-right: 20px !important;
+}
+
+.member-header .member-info h3 {
+    font-size: 24px !important;
+    margin: 0 0 5px 0 !important;
+    color: var(--text-primary) !important;
+}
+
+.member-header .member-info p {
+    margin: 0 0 5px 0 !important;
+    color: var(--text-secondary) !important;
+}
+
+.member-contact {
+    display: flex !important;
+    gap: 15px !important;
+    margin-top: 10px !important;
+}
+
+.contact-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    color: var(--text-tertiary) !important;
+    font-size: 14px !important;
+}
+
+.contact-item i {
+    color: var(--primary-color) !important;
+}
+
+/* Member stats section */
+.member-stats-section {
+    margin-bottom: 25px !important;
+    background-color: var(--background-color) !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+.member-stats-section h4 {
+    margin: 0 0 15px 0 !important;
+    color: var(--text-primary) !important;
+    font-size: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.member-stats-section h4 i {
+    color: var(--primary-color) !important;
+}
+
+/* Project item styling */
+.member-project-item {
+    background-color: white !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+    margin-bottom: 10px !important;
+    border: 1px solid var(--border-light) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.2s ease !important;
+}
+
+.member-project-item:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.project-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 8px !important;
+}
+
+.project-name {
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    font-size: 14px !important;
+}
+
+.project-progress-value {
+    font-size: 12px !important;
+    color: var(--text-secondary) !important;
+    font-weight: 500 !important;
+}
+
+.project-progress-bar {
+    height: 6px !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    border-radius: 3px !important;
+    overflow: hidden !important;
+}
+
+.progress-bar-fill {
+    height: 100% !important;
+    border-radius: 3px !important;
+    transition: width 0.5s ease !important;
+}
+
+.progress-bar-fill.high {
+    background-color: #e74c3c !important;
+}
+
+.progress-bar-fill.medium {
+    background-color: #f39c12 !important;
+}
+
+.progress-bar-fill.low {
+    background-color: #3498db !important;
+}
+
+/* Task item styling */
+.member-task-item {
+    background-color: white !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+    margin-bottom: 10px !important;
+    border: 1px solid var(--border-light) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.2s ease !important;
+}
+
+.member-task-item:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.member-task-item.completed {
+    border-left: 3px solid #2ecc71 !important;
+}
+
+.member-task-item.in-progress {
+    border-left: 3px solid #3498db !important;
+}
+
+.member-task-item.not-started {
+    border-left: 3px solid #95a5a6 !important;
+}
+
+.member-task-item.overdue {
+    border-left: 3px solid #e74c3c !important;
+}
+
+.task-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    margin-bottom: 8px !important;
+}
+
+.task-name {
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    font-size: 14px !important;
+}
+
+.task-project {
+    font-size: 12px !important;
+    color: var(--text-tertiary) !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    padding: 2px 6px !important;
+    border-radius: 10px !important;
+}
+
+.task-details {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    font-size: 12px !important;
+    color: var(--text-secondary) !important;
+}
+
+.task-status {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+.task-status i {
+    color: var(--primary-color) !important;
+}
+
+.task-due {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+.task-due.overdue {
+    color: #e74c3c !important;
+    font-weight: 500 !important;
+}
+
+.task-due.overdue i {
+    color: #e74c3c !important;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .team-members-container {
+        flex-direction: column !important;
+    }
+
+    .team-members-sidebar {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+
+    .team-grid {
+        max-height: none !important; /* Remove height restriction in mobile view too */
+    }
+
+    .member-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: center !important;
+    }
+
+    .member-header .member-avatar {
+        margin: 0 auto 15px auto !important;
+    }
+
+    .member-header .member-info {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .member-contact {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+}

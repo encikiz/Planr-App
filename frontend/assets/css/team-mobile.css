@@ -1,0 +1,286 @@
+/* Team Page Tablet and Mobile Styles */
+
+/* Overall container fix */
+.main-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: var(--spacing-md) !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    margin-bottom: 80px !important; /* Space for bottom navigation */
+}
+
+/* Fix the gap between tabs and content */
+.team-tabs {
+    margin-bottom: 0 !important;
+    padding: 4px 8px 0 !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.tab-btn {
+    padding: 4px 12px !important;
+    font-size: 14px !important;
+    margin-right: 4px !important;
+}
+
+.tab-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.tab-content.active {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Completely redesigned filters section */
+.filters-section {
+    display: grid !important;
+    grid-template-columns: minmax(200px, 300px) 1fr auto !important;
+    grid-gap: 15px !important;
+    align-items: center !important;
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+    border-top: none !important;
+    border-radius: 0 0 8px 8px !important;
+    padding: 15px !important;
+    background-color: var(--card-color) !important;
+    border: 1px solid var(--border-light) !important;
+    border-top: none !important;
+    position: relative !important;
+    z-index: 1 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Fix for the gap between tabs and content */
+.team-container {
+    display: grid !important;
+    grid-gap: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+/* Fix for tab content layout */
+.tab-content {
+    display: flex !important;
+    flex-direction: column !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+/* Fix for team tabs */
+.team-tabs {
+    display: flex !important;
+    background-color: var(--card-color) !important;
+    border-radius: var(--border-radius-md) var(--border-radius-md) 0 0 !important;
+    border: 1px solid var(--border-light) !important;
+    border-bottom: none !important;
+    overflow: hidden !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* Additional classes to replace inline styles */
+.team-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+/* Classes for JavaScript manipulation */
+.no-margin-bottom {
+    margin-bottom: 0 !important;
+}
+
+.no-margin-top {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Specific styles for team members tab */
+#members-tab {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Specific styles for teams tab */
+#teams-tab {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Complete redesign of search box */
+.search-box {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    grid-column: 1 !important;
+}
+
+.search-box input {
+    width: 100% !important;
+    height: 36px !important;
+    padding: 8px 12px !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--border-radius-sm) !important;
+    font-size: 14px !important;
+    outline: none !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    background-color: white !important;
+}
+
+.search-box input:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Filter options styling */
+.filter-options {
+    display: flex !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    grid-column: 2 !important;
+    justify-content: flex-start !important;
+}
+
+.filter-group {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 150px !important;
+}
+
+.filter-options select {
+    height: 36px !important;
+    padding: 0 10px !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--border-radius-sm) !important;
+    background-color: white !important;
+    font-size: 14px !important;
+    width: 100% !important;
+}
+
+/* Team header actions styling */
+.team-header-actions {
+    grid-column: 3 !important;
+    display: flex !important;
+    gap: 10px !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+}
+
+/* Team cards and content */
+.team-card, .team-member-card, .team-panel, .team-content, .team-description, .team-members {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+/* Team member details */
+.team-member-details, .member-header, .member-info, .member-stats, .member-tasks, .member-performance {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+/* Mobile specific styles */
+@media screen and (max-width: 768px) {
+    .team-container {
+        grid-template-columns: 1fr !important;
+    }
+
+    .filters-section {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: 12px !important;
+        gap: 12px !important;
+    }
+
+    .search-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 0 !important;
+        order: 1 !important;
+    }
+
+    .filter-options {
+        flex-direction: column !important;
+        width: 100% !important;
+        margin-bottom: 0 !important;
+        gap: 8px !important;
+        order: 2 !important;
+    }
+
+    .filter-group {
+        width: 100% !important;
+    }
+
+    .filter-options select {
+        width: 100% !important;
+        margin-bottom: 0 !important;
+    }
+
+    .team-header-actions {
+        width: 100% !important;
+        justify-content: space-between !important;
+        order: 3 !important;
+    }
+
+    .team-header-actions button {
+        flex: 1 !important;
+        font-size: 13px !important;
+        padding: 6px 8px !important;
+        margin-left: 4px !important;
+    }
+
+    .team-header-actions button:first-child {
+        margin-left: 0 !important;
+    }
+}
+
+/* Team members list and teams list */
+#members-tab, #teams-tab, .team-members-list, .teams-list, .team-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+/* Small mobile styles */
+@media screen and (max-width: 480px) {
+    .tab-btn {
+        padding: 4px 8px !important;
+        font-size: 13px !important;
+    }
+
+    .team-header-actions button {
+        font-size: 12px !important;
+        padding: 4px 6px !important;
+    }
+
+    .team-header-actions button i {
+        margin-right: 2px !important;
+    }
+}

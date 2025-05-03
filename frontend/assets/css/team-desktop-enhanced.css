@@ -1,0 +1,340 @@
+/* Enhanced Desktop Styling for Team Page */
+
+/* Improve overall layout */
+.team-container {
+    padding: 20px !important;
+}
+
+.team-wrapper {
+    background-color: var(--card-color) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+    overflow: hidden !important;
+}
+
+/* Enhance tab styling */
+.team-tabs {
+    background-color: var(--background-color) !important;
+    padding: 15px 20px 0 !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+.tab-btn {
+    font-weight: 600 !important;
+    padding: 12px 20px !important;
+    border-radius: 8px 8px 0 0 !important;
+    transition: all 0.2s ease !important;
+}
+
+.tab-btn.active {
+    background-color: white !important;
+    color: var(--primary-color) !important;
+    border-top: 2px solid var(--primary-color) !important;
+}
+
+/* Improve filters section */
+.filters-section {
+    padding: 20px !important;
+    background-color: white !important;
+    border-bottom: 1px solid var(--border-light) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+}
+
+.search-box input {
+    min-width: 250px !important;
+    padding: 10px 15px !important;
+    border-radius: 6px !important;
+    border: 1px solid var(--border-color) !important;
+    background-color: var(--background-color) !important;
+}
+
+.filter-options {
+    display: flex !important;
+    gap: 15px !important;
+}
+
+.filter-group select {
+    padding: 10px 15px !important;
+    border-radius: 6px !important;
+    border: 1px solid var(--border-color) !important;
+    background-color: var(--background-color) !important;
+    min-width: 180px !important;
+}
+
+/* Improve team members container layout */
+.team-members-container {
+    display: grid !important;
+    grid-template-columns: 320px 1fr !important;
+    gap: 25px !important;
+    padding: 25px !important;
+    background-color: white !important;
+    height: auto !important;
+    min-height: 600px !important;
+}
+
+/* Enhance team members sidebar */
+.team-members-sidebar {
+    width: 100% !important;
+    max-width: 320px !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    border: 1px solid var(--border-light) !important;
+    background-color: var(--background-color) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Improve team grid */
+.team-grid {
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+/* Enhance team member cards */
+.team-card {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border: none !important;
+    border-bottom: 1px solid var(--border-light) !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease !important;
+    padding: 15px !important;
+    position: relative !important;
+    cursor: pointer !important;
+}
+
+.team-card:last-child {
+    border-bottom: none !important;
+}
+
+.team-card:hover {
+    background-color: rgba(13, 138, 188, 0.05) !important;
+}
+
+.team-card.active {
+    background-color: rgba(13, 138, 188, 0.1) !important;
+    border-left: 3px solid var(--primary-color) !important;
+}
+
+.team-card .member-info {
+    padding-right: 40px !important;
+}
+
+.team-card .member-actions {
+    position: absolute !important;
+    right: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    display: flex !important;
+    gap: 5px !important;
+    opacity: 0 !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.team-card:hover .member-actions {
+    opacity: 1 !important;
+}
+
+.member-action-btn {
+    background: none !important;
+    border: none !important;
+    color: var(--text-tertiary) !important;
+    cursor: pointer !important;
+    padding: 5px !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease !important;
+}
+
+.member-action-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: var(--primary-color) !important;
+}
+
+.department-indicator {
+    width: 3px !important;
+}
+
+/* Improve member details container */
+.team-member-details-container {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    border: 1px solid var(--border-light) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+.team-member-details {
+    padding: 25px !important;
+    background-color: white !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+/* Enhance member header */
+.member-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 25px !important;
+    padding-bottom: 25px !important;
+    margin-bottom: 0 !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+.member-header .member-avatar {
+    width: 100px !important;
+    height: 100px !important;
+    border: 3px solid white !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1) !important;
+    margin-right: 0 !important;
+}
+
+.member-header .member-info {
+    flex: 1 !important;
+}
+
+.member-header .member-info h3 {
+    font-size: 28px !important;
+    margin: 0 0 5px 0 !important;
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+}
+
+.member-header .member-info p {
+    margin: 0 0 8px 0 !important;
+    color: var(--text-secondary) !important;
+    font-size: 16px !important;
+}
+
+.member-contact {
+    display: flex !important;
+    gap: 20px !important;
+    margin-top: 15px !important;
+}
+
+.contact-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    color: var(--text-tertiary) !important;
+    font-size: 14px !important;
+}
+
+.contact-item i {
+    color: var(--primary-color) !important;
+    font-size: 16px !important;
+}
+
+/* Improve member stats container */
+.member-stats-container {
+    padding: 25px !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+}
+
+.member-stats-section {
+    margin-bottom: 0 !important;
+    background-color: var(--background-color) !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+.member-stats-section:last-child {
+    grid-column: span 2 !important;
+}
+
+.member-stats-section h4 {
+    margin: 0 0 15px 0 !important;
+    color: var(--text-primary) !important;
+    font-size: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-weight: 600 !important;
+}
+
+.member-stats-section h4 i {
+    color: var(--primary-color) !important;
+}
+
+/* Enhance project and task items */
+.member-project-item, .member-task-item {
+    background-color: white !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    margin-bottom: 10px !important;
+    border: 1px solid var(--border-light) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.2s ease !important;
+}
+
+.member-project-item:hover, .member-task-item:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* New Member button styling */
+.new-member-btn {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+}
+
+.new-member-btn:hover {
+    background-color: var(--primary-dark) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Department label styling */
+.department-label {
+    display: inline-block !important;
+    padding: 5px 12px !important;
+    border-radius: 4px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: white !important;
+    margin-top: 8px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.department-label.Engineering {
+    background-color: #3498db !important;
+}
+
+.department-label.Design {
+    background-color: #9b59b6 !important;
+}
+
+.department-label.Product {
+    background-color: #2ecc71 !important;
+}
+
+.department-label.Marketing {
+    background-color: #e74c3c !important;
+}
+
+.department-label.IT {
+    background-color: #f39c12 !important;
+}
+
+/* Improve performance chart */
+.member-performance {
+    padding: 15px !important;
+    background-color: white !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--border-light) !important;
+}

@@ -1,0 +1,39 @@
+/* Fix for team member list cutoff issues */
+
+/* Ensure the team members container has proper height */
+.team-members-container {
+    height: auto !important;
+    min-height: 500px !important;
+}
+
+/* Ensure the sidebar takes appropriate space */
+.team-members-sidebar {
+    height: auto !important;
+    min-height: 500px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Ensure the team grid displays all members without cutoff */
+.team-grid {
+    flex: 1 !important;
+    height: auto !important;
+    min-height: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* Ensure team cards are fully visible */
+.team-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 10px !important;
+}
+
+/* Fix for mobile view */
+@media screen and (max-width: 768px) {
+    .team-grid {
+        height: auto !important;
+        max-height: none !important;
+    }
+}

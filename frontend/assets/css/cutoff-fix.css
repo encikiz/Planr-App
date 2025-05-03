@@ -1,0 +1,77 @@
+/* Fix for content cutoff issues */
+
+/* Ensure all containers have proper width and overflow handling */
+.main-content,
+.team-container,
+.team-wrapper,
+.tab-content,
+.filters-section,
+.team-tabs,
+.team-card,
+.team-member-card,
+.team-panel,
+.team-content,
+.team-description,
+.team-members,
+.team-member-details,
+.member-header,
+.member-info,
+.member-stats,
+.member-tasks,
+.member-performance,
+#members-tab,
+#teams-tab,
+.team-members-list,
+.teams-list,
+.team-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+/* Fix for search and filter elements */
+.search-box,
+.filter-options,
+.filter-group,
+.team-header-actions {
+    box-sizing: border-box !important;
+}
+
+/* Fix for buttons and action elements */
+.team-header-actions button,
+.new-team-btn,
+.team-template-btn,
+.add-team-member-btn,
+.create-team-btn {
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+}
+
+/* Mobile specific fixes */
+@media screen and (max-width: 768px) {
+    .main-content {
+        padding: var(--spacing-md) !important;
+    }
+    
+    .team-header-actions button {
+        font-size: 13px !important;
+        padding: 6px 8px !important;
+    }
+}
+
+/* Small mobile specific fixes */
+@media screen and (max-width: 480px) {
+    .main-content {
+        padding: var(--spacing-sm) !important;
+    }
+    
+    .team-header-actions button {
+        font-size: 12px !important;
+        padding: 4px 6px !important;
+    }
+    
+    .team-header-actions button i {
+        margin-right: 2px !important;
+    }
+}

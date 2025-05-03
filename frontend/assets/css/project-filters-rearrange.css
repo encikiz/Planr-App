@@ -1,0 +1,55 @@
+/* CSS to rearrange the filters section in the projects page */
+
+/* Adjust the filters section layout */
+.projects-container .filters-section {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 15px 20px !important;
+    background-color: white !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+/* Adjust the new project button */
+.projects-container .new-project-btn {
+    order: 1 !important;
+    margin-right: 15px !important;
+}
+
+/* Adjust the filter options (status and priority) */
+.projects-container .filter-options {
+    order: 2 !important;
+    display: flex !important;
+    gap: 15px !important;
+    flex-wrap: nowrap !important;
+}
+
+/* Adjust the search box */
+.projects-container .search-box {
+    order: 3 !important;
+    flex: 1 !important;
+    max-width: 300px !important;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .projects-container .filters-section {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+
+    .projects-container .new-project-btn,
+    .projects-container .filter-options,
+    .projects-container .search-box {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .projects-container .filter-options {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+}

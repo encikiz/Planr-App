@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Team Members - Planr</title>
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="/assets/images/favicon.svg" color="#0078D7">
+    <meta name="theme-color" content="#0078D7">
+    <link rel="stylesheet" href="/assets/css/themes.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/member-sections.css">
+    <link rel="stylesheet" href="/assets/css/team-filters-rearrange.css">
+    <link rel="stylesheet" href="/assets/css/team-button-fix.css">
+    <link rel="stylesheet" href="/assets/css/team-dark-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/notification-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/auth.css">
+    <link rel="stylesheet" href="/assets/css/user-profile.css">
+    <link rel="stylesheet" href="/assets/css/dark-mode-fix.css">
+    <link rel="stylesheet" href="/assets/css/team-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/solid-modal.css">
+    <link rel="stylesheet" href="/assets/css/tabs.css">
+    <link rel="stylesheet" href="/assets/css/teams-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/team-modal-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/team-member-selection.css">
+    <link rel="stylesheet" href="/assets/css/team-creation-modal.css">
+    <link rel="stylesheet" href="/assets/css/performance-dashboard.css">
+    <link rel="stylesheet" href="/assets/css/delete-confirmation.css">
+    <link rel="stylesheet" href="/assets/css/team-style-buttons.css">
+    <link rel="stylesheet" href="/assets/css/theme-toggle.css">
+    <link rel="stylesheet" href="/assets/css/sidebar-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/user-profile-mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Full Page Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <h1 class="logo">Planr</h1>
+        <div class="spinner"></div>
+        <p class="loading-text">Loading team members...</p>
+    </div>
+
+    <div class="app-container page-transition">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">Planr</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="/index.html">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projects.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tasks.html">
+                            <i class="fas fa-tasks"></i>
+                            <span>Tasks</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="milestones.html">
+                            <i class="fas fa-flag"></i>
+                            <span>Milestones</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="team-members.html">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Team Members</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="team.html">
+                            <i class="fas fa-users"></i>
+                            <span>Teams</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>© 2025 Planr v0.2 developed by hafizanm@gmail.com</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Team Members</h2>
+                <div class="user-profile">
+                    <button type="button" id="theme-toggle" class="theme-toggle" title="Switch to Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <span>Welcome, Admin</span>
+                    <div class="avatar">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="Admin">
+                    </div>
+                    <button type="button" class="logout-btn" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i><span class="logout-text">Logout</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="team-container">
+                <div class="team-wrapper">
+                    <div class="filters-section">
+                        <div class="team-header-actions">
+                            <button type="button" class="new-member-btn">
+                                <i class="fas fa-plus"></i> New Member
+                            </button>
+                        </div>
+
+                        <div class="filter-options">
+                            <div class="filter-group">
+                                <label for="department-filter" class="sr-only">Filter by Department</label>
+                                <select id="department-filter" aria-label="Filter by Department" title="Filter by Department">
+                                    <option value="all">All Departments</option>
+                                    <option value="Engineering">Engineering</option>
+                                    <option value="Design">Design</option>
+                                    <option value="Product">Product</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="IT">IT</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="sort-by" class="sr-only">Sort by</label>
+                                <select id="sort-by" aria-label="Sort by" title="Sort by">
+                                    <option value="name-asc">Name (A-Z)</option>
+                                    <option value="name-desc">Name (Z-A)</option>
+                                    <option value="role">Role</option>
+                                    <option value="department">Department</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-box">
+                            <label for="team-search" class="sr-only">Search team members</label>
+                            <input type="text" id="team-search" placeholder="Search team members..." aria-label="Search team members">
+                        </div>
+                    </div>
+
+                    <div class="team-page-layout">
+                        <div class="team-members-sidebar">
+                            <div class="sidebar-header">
+                                <h3>Team Members</h3>
+                            </div>
+                            <div class="team-grid" id="team-grid">
+                                <!-- Team members will be loaded here dynamically -->
+                            </div>
+                        </div>
+
+                        <div class="team-member-details-section">
+                            <div class="member-details-container">
+                                <!-- Tabbed Navigation -->
+                                <div class="member-tabs">
+                                    <button type="button" class="tab-btn active" data-tab="performance">
+                                        <i class="fas fa-chart-pie"></i> Performance
+                                    </button>
+                                    <button type="button" class="tab-btn" data-tab="projects">
+                                        <i class="fas fa-project-diagram"></i> Projects
+                                    </button>
+                                    <button type="button" class="tab-btn" data-tab="tasks">
+                                        <i class="fas fa-tasks"></i> Tasks
+                                    </button>
+                                    <button type="button" class="tab-btn" data-tab="details">
+                                        <i class="fas fa-user"></i> Details
+                                    </button>
+                                </div>
+
+                                <!-- Tab Content -->
+                                <div class="tab-content">
+                                    <!-- Performance Tab -->
+                                    <div class="tab-pane active" id="performance-tab">
+                                        <div id="member-performance">
+                                            <div class="empty-section">
+                                                <i class="fas fa-chart-line"></i>
+                                                <h4>No Performance Data</h4>
+                                                <p>Select a team member to view their performance metrics.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Projects Tab -->
+                                    <div class="tab-pane" id="projects-tab">
+                                        <div id="member-projects">
+                                            <!-- Projects will be loaded here dynamically -->
+                                            <div class="empty-section">
+                                                <i class="fas fa-project-diagram"></i>
+                                                <h4>No Projects Available</h4>
+                                                <p>Select a team member to view their assigned projects.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tasks Tab -->
+                                    <div class="tab-pane" id="tasks-tab">
+                                        <div id="member-tasks">
+                                            <!-- Tasks will be loaded here dynamically -->
+                                            <div class="empty-section">
+                                                <i class="fas fa-tasks"></i>
+                                                <h4>No Tasks Available</h4>
+                                                <p>Select a team member to view their assigned tasks.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Details Tab -->
+                                    <div class="tab-pane" id="details-tab">
+                                        <div id="member-details">
+                                            <!-- Member details will be loaded here dynamically -->
+                                            <div class="empty-section">
+                                                <i class="fas fa-user"></i>
+                                                <h4>Select a Team Member</h4>
+                                                <p>Choose a team member from the list to view their details.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/notification.js"></script>
+    <script src="/assets/js/theme-switcher.js"></script>
+    <script src="/assets/js/team-api.js"></script>
+    <script src="/assets/js/member-modal.js"></script>
+    <script src="/assets/js/team-members-page.js"></script>
+    <script>
+        // Force reload CSS files to prevent caching issues
+        function reloadStylesheets() {
+            // Disabled for now as it's causing issues with the server
+            // const queryString = '?reload=' + new Date().getTime();
+            // const links = document.getElementsByTagName('link');
+            //
+            // for (let i = 0; i < links.length; i++) {
+            //     if (links[i].rel === 'stylesheet') {
+            //         const href = links[i].href.replace(/\?.*|$/, queryString);
+            //         links[i].href = href;
+            //     }
+            // }
+        }
+
+        // Call the function when the page loads
+        window.onload = function() {
+            // reloadStylesheets();
+
+            // Direct event listener for logout button
+            const logoutBtn = document.querySelector('.logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    console.log('Logout button clicked');
+                    // Show notification
+                    if (typeof showNotification === 'function') {
+                        showNotification('Logging out...', 'info');
+                    }
+
+                    // Redirect to login page
+                    setTimeout(function() {
+                        window.location.href = '/login';
+                    }, 1000);
+                });
+            }
+        };
+    </script>
+</body>
+</html>

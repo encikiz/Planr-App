@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Milestone Details - Planr</title>
+    <link rel="stylesheet" href="/assets/css/themes.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/notification-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/auth.css">
+    <link rel="stylesheet" href="/assets/css/user-profile.css">
+    <link rel="stylesheet" href="/assets/css/dark-mode-fix.css">
+    <link rel="stylesheet" href="/assets/css/milestones-consolidated.css">
+    <link rel="stylesheet" href="/assets/css/milestone-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Full Page Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <h1 class="logo">Planr</h1>
+        <div class="spinner"></div>
+        <p class="loading-text">Loading milestone details...</p>
+    </div>
+
+    <div class="app-container page-transition">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">Planr</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="/index.html">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projects.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tasks.html">
+                            <i class="fas fa-tasks"></i>
+                            <span>Tasks</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="milestones.html">
+                            <i class="fas fa-flag"></i>
+                            <span>Milestones</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="team-members.html">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Team Members</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="team.html">
+                            <i class="fas fa-users"></i>
+                            <span>Teams</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>© 2025 Planr. Developed by Hafizan.</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Milestone Details</h2>
+                <div class="user-profile">
+                    <button type="button" id="theme-toggle" class="theme-toggle" title="Switch to Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <span id="welcome-message">Welcome, Mohd Hafizan</span>
+                    <div class="avatar" id="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="User Avatar">
+                    </div>
+                    <button type="button" class="logout-btn" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i><span class="logout-text">Logout</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="milestone-details-container">
+                <div class="milestone-details-header">
+                    <div class="milestone-details-back">
+                        <a href="milestones.html" class="back-link">
+                            <i class="fas fa-arrow-left"></i> Back to Milestones
+                        </a>
+                    </div>
+                    <div class="milestone-details-actions">
+                        <button type="button" id="edit-milestone-btn" class="action-btn edit-btn">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button type="button" id="delete-milestone-btn" class="action-btn delete-btn">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>
+
+                <div class="milestone-details-content">
+                    <div class="milestone-details-main">
+                        <div class="milestone-details-card">
+                            <div class="milestone-details-title">
+                                <h1 id="milestone-name">Loading milestone...</h1>
+                                <span id="milestone-status" class="milestone-status">Status</span>
+                            </div>
+
+                            <div class="milestone-details-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-project-diagram"></i>
+                                    <span>Project: </span>
+                                    <a href="#" id="milestone-project">Project Name</a>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>Due Date: </span>
+                                    <span id="milestone-due-date">Due Date</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>Created By: </span>
+                                    <span id="milestone-created-by">User Name</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Created: </span>
+                                    <span id="milestone-created-at">Creation Date</span>
+                                </div>
+                            </div>
+
+                            <div class="milestone-details-progress">
+                                <div class="progress-header">
+                                    <h3>Progress</h3>
+                                    <span id="milestone-progress-percentage">0%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="milestone-progress-fill"></div>
+                                </div>
+                            </div>
+
+                            <div class="milestone-details-description">
+                                <h3>Description</h3>
+                                <p id="milestone-description">Loading description...</p>
+                            </div>
+
+                            <div class="milestone-details-deliverables">
+                                <h3>Deliverables</h3>
+                                <ul id="milestone-deliverables">
+                                    <li>Loading deliverables...</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="milestone-details-sidebar">
+                        <div class="milestone-details-section">
+                            <h3>Related Tasks</h3>
+                            <div class="milestone-tasks" id="milestone-tasks">
+                                <div class="loading-tasks">
+                                    <i class="fas fa-spinner fa-spin"></i> Loading tasks...
+                                </div>
+                                <div class="no-tasks hidden" id="no-tasks-message">
+                                    <p>No tasks associated with this milestone.</p>
+                                    <button type="button" id="add-task-btn" class="add-task-btn">
+                                        <i class="fas fa-plus"></i> Add Task
+                                    </button>
+                                </div>
+                                <ul class="task-list" id="task-list">
+                                    <!-- Tasks will be loaded here dynamically -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="milestone-details-section">
+                            <h3>Activity Timeline</h3>
+                            <div class="milestone-timeline" id="milestone-timeline">
+                                <div class="loading-timeline">
+                                    <i class="fas fa-spinner fa-spin"></i> Loading timeline...
+                                </div>
+                                <div class="no-activity hidden" id="no-activity-message">
+                                    <p>No activity recorded yet.</p>
+                                </div>
+                                <ul class="timeline-list" id="timeline-list">
+                                    <!-- Timeline will be loaded here dynamically -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/notification.js"></script>
+    <script src="/assets/js/theme-switcher.js"></script>
+    <script src="/assets/js/projects.js"></script>
+    <script src="/assets/js/tasks-api.js"></script>
+    <script src="/assets/js/milestones-consolidated.js"></script>
+    <script src="/assets/js/milestone-details.js"></script>
+    <script>
+        // Direct event listener for logout button
+        window.onload = function() {
+            const logoutBtn = document.querySelector('.logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    console.log('Logout button clicked');
+                    // Show notification
+                    if (typeof showNotification === 'function') {
+                        showNotification('Logging out...', 'info');
+                    }
+
+                    // Redirect to login page
+                    setTimeout(function() {
+                        window.location.href = '/login';
+                    }, 1000);
+                });
+            }
+
+            // Initialize milestone details page
+            initMilestoneDetailsPage();
+        };
+    </script>
+</body>
+</html>

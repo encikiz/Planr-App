@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Website Redesign",
+    "description": "Redesign the company website with modern UI/UX principles",
+    "startDate": "2025-01-15",
+    "endDate": "2025-04-30",
+    "status": "in-progress",
+    "progress": 65,
+    "priority": "high",
+    "teamMembers": [1, 2, 3],
+    "tasks": [1, 2, 3, 4]
+  },
+  {
+    "id": 2,
+    "name": "Mobile App Development",
+    "description": "Develop a cross-platform mobile application for customers",
+    "startDate": "2025-02-01",
+    "endDate": "2025-06-15",
+    "status": "in-progress",
+    "progress": 40,
+    "priority": "high",
+    "teamMembers": [2, 4, 5],
+    "tasks": [5, 6, 7]
+  },
+  {
+    "id": 3,
+    "name": "Database Migration",
+    "description": "Migrate legacy database to new cloud infrastructure",
+    "startDate": "2025-03-10",
+    "endDate": "2025-05-20",
+    "status": "planning",
+    "progress": 15,
+    "priority": "medium",
+    "teamMembers": [1, 6],
+    "tasks": [8, 9]
+  },
+  {
+    "id": 4,
+    "name": "Marketing Campaign",
+    "description": "Launch Q2 marketing campaign across digital channels",
+    "startDate": "2025-04-01",
+    "endDate": "2025-06-30",
+    "status": "not-started",
+    "progress": 0,
+    "priority": "medium",
+    "teamMembers": [3, 7],
+    "tasks": [10, 11]
+  },
+  {
+    "id": 5,
+    "name": "Product Analytics",
+    "description": "Implement analytics tracking for user behavior",
+    "startDate": "2025-02-15",
+    "endDate": "2025-04-15",
+    "status": "completed",
+    "progress": 100,
+    "priority": "low",
+    "teamMembers": [4, 5],
+    "tasks": [12, 13, 14]
+  }
+]

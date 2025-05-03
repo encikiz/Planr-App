@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Tasks - Planr</title>
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/css/themes.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/task-management.css">
+    <link rel="stylesheet" href="/assets/css/tasks-page.css">
+    <link rel="stylesheet" href="/assets/css/tasks-filters-rearrange.css">
+    <link rel="stylesheet" href="/assets/css/tasks-dark-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/notification-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/auth.css">
+    <link rel="stylesheet" href="/assets/css/user-profile.css">
+    <link rel="stylesheet" href="/assets/css/dark-mode-fix.css">
+    <link rel="stylesheet" href="/assets/css/theme-toggle.css">
+    <link rel="stylesheet" href="/assets/css/sidebar-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/user-profile-mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Full Page Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <h1 class="logo">Planr</h1>
+        <div class="spinner"></div>
+        <p class="loading-text">Loading tasks...</p>
+    </div>
+
+    <div class="app-container page-transition">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">Planr</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="/index.html">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projects.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="tasks.html">
+                            <i class="fas fa-tasks"></i>
+                            <span>Tasks</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="milestones.html">
+                            <i class="fas fa-flag"></i>
+                            <span>Milestones</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="team-members.html">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Team Members</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="team.html">
+                            <i class="fas fa-users"></i>
+                            <span>Teams</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>© 2025 Planr v0.2 developed by hafizanm@gmail.com</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Tasks</h2>
+                <div class="user-profile">
+                    <button type="button" id="theme-toggle" class="theme-toggle" title="Switch to Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <span>Welcome, Admin</span>
+                    <div class="avatar">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="Admin">
+                    </div>
+                </div>
+            </header>
+
+            <div class="tasks-container">
+                <!-- Task Analytics Section -->
+                <section class="task-analytics">
+                    <div class="metrics-row">
+                        <div class="metric-card">
+                            <div class="metric-icon">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <div class="metric-content">
+                                <h3>Total Tasks</h3>
+                                <p class="metric-value" id="total-tasks-count">0</p>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon">
+                                <i class="fas fa-spinner"></i>
+                            </div>
+                            <div class="metric-content">
+                                <h3>In Progress</h3>
+                                <p class="metric-value" id="in-progress-tasks-count">0</p>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="metric-content">
+                                <h3>Completed</h3>
+                                <p class="metric-value" id="completed-tasks-count">0</p>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="metric-content">
+                                <h3>Overdue</h3>
+                                <p class="metric-value" id="overdue-tasks-count">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Task Filters Section -->
+                <div class="filters-section">
+                    <div class="task-header-actions">
+                        <button type="button" class="new-task-btn">
+                            <i class="fas fa-plus"></i> New Task
+                        </button>
+                    </div>
+
+                    <div class="filter-options">
+                        <div class="filter-group">
+                            <label for="project-filter" class="sr-only">Filter by Project</label>
+                            <select id="project-filter" aria-label="Filter by Project" title="Filter by Project">
+                                <option value="all">All Projects</option>
+                                <!-- Projects will be loaded here dynamically -->
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="status-filter" class="sr-only">Filter by Status</label>
+                            <select id="status-filter" aria-label="Filter by Status" title="Filter by Status">
+                                <option value="all">All Statuses</option>
+                                <option value="not-started">Not Started</option>
+                                <option value="in-progress">In Progress</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="priority-filter" class="sr-only">Filter by Priority</label>
+                            <select id="priority-filter" aria-label="Filter by Priority" title="Filter by Priority">
+                                <option value="all">All Priorities</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="assignee-filter" class="sr-only">Filter by Assignee</label>
+                            <select id="assignee-filter" aria-label="Filter by Assignee" title="Filter by Assignee">
+                                <option value="all">All Assignees</option>
+                                <!-- Team members will be loaded here dynamically -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="search-box">
+                        <label for="task-search" class="sr-only">Search tasks</label>
+                        <input type="text" id="task-search" placeholder="Search tasks..." aria-label="Search tasks">
+                    </div>
+                </div>
+
+                <!-- Task View Options -->
+                <div class="view-options">
+                    <div class="view-toggle">
+                        <button type="button" class="view-btn active" data-view="list" title="List View">
+                            <i class="fas fa-list"></i>
+                        </button>
+                        <button type="button" class="view-btn" data-view="board" title="Board View">
+                            <i class="fas fa-columns"></i>
+                        </button>
+                    </div>
+
+                    <div class="sort-options">
+                        <label for="sort-by" class="sort-label">Sort by:</label>
+                        <select id="sort-by" aria-label="Sort by" title="Sort by">
+                            <option value="due-date-asc">Due Date (Earliest)</option>
+                            <option value="due-date-desc">Due Date (Latest)</option>
+                            <option value="priority-desc">Priority (Highest)</option>
+                            <option value="priority-asc">Priority (Lowest)</option>
+                            <option value="name-asc">Name (A-Z)</option>
+                            <option value="name-desc">Name (Z-A)</option>
+                        </select>
+                    </div>
+
+                    <div class="group-options">
+                        <label for="group-by" class="group-label">Group by:</label>
+                        <select id="group-by" aria-label="Group by" title="Group by">
+                            <option value="none">None</option>
+                            <option value="project">Project</option>
+                            <option value="status">Status</option>
+                            <option value="priority">Priority</option>
+                            <option value="assignee">Assignee</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Task List View (Default) -->
+                <div class="task-view list-view active" id="list-view">
+                    <div class="tasks-list" id="tasks-list">
+                        <!-- Tasks will be loaded here dynamically -->
+                    </div>
+                </div>
+
+                <!-- Task Board View -->
+                <div class="task-view board-view" id="board-view">
+                    <div class="task-boards" id="task-boards">
+                        <!-- Task boards will be loaded here dynamically -->
+                    </div>
+                </div>
+
+                <!-- No Tasks Message -->
+                <div class="no-tasks-message hidden" id="no-tasks-message">
+                    <div class="empty-state">
+                        <i class="fas fa-tasks"></i>
+                        <h3>No Tasks Found</h3>
+                        <p>Try adjusting your filters or create a new task</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/notification.js"></script>
+    <script src="/assets/js/theme-switcher.js"></script>
+    <script src="/assets/js/tasks.js"></script>
+    <script src="/assets/js/tasks-page.js"></script>
+</body>
+</html>

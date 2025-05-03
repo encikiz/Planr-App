@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Milestones - Planr</title>
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/css/themes.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/notification-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/auth.css">
+    <link rel="stylesheet" href="/assets/css/user-profile.css">
+    <link rel="stylesheet" href="/assets/css/dark-mode-fix.css">
+    <link rel="stylesheet" href="/assets/css/milestones-consolidated.css">
+    <link rel="stylesheet" href="/assets/css/milestones-improved.css">
+    <link rel="stylesheet" href="/assets/css/theme-toggle.css">
+    <link rel="stylesheet" href="/assets/css/sidebar-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/user-profile-mobile.css">
+    <link rel="stylesheet" href="/assets/css/milestone-adjustments.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Full Page Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <h1 class="logo">Planr</h1>
+        <div class="spinner"></div>
+        <p class="loading-text">Loading milestones...</p>
+    </div>
+
+    <div class="app-container page-transition">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">Planr</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="/index.html">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projects.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tasks.html">
+                            <i class="fas fa-tasks"></i>
+                            <span>Tasks</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="milestones.html">
+                            <i class="fas fa-flag"></i>
+                            <span>Milestones</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="team-members.html">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Team Members</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="team.html">
+                            <i class="fas fa-users"></i>
+                            <span>Teams</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>© 2025 Planr v0.2 developed by hafizanm@gmail.com</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Milestones</h2>
+                <div class="user-profile">
+                    <button type="button" id="theme-toggle" class="theme-toggle" title="Switch to Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <span id="welcome-message">Welcome, Mohd Hafizan</span>
+                    <div class="avatar" id="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="User Avatar">
+                    </div>
+                    <button type="button" class="logout-btn" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i><span class="logout-text">Logout</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-container">
+                <div class="page-header">
+                    <h1 class="page-title"><i class="fas fa-flag"></i> Project Milestones</h1>
+                    <div class="page-actions">
+                        <button type="button" class="btn btn-primary" id="new-milestone-btn">
+                            <i class="fas fa-plus"></i> New Milestone
+                        </button>
+                        <a href="milestone-timeline.html" class="btn btn-secondary">
+                            <i class="fas fa-calendar-alt"></i> View Timeline
+                        </a>
+                        <a href="milestone-reports.html" class="btn btn-secondary">
+                            <i class="fas fa-chart-bar"></i> View Reports
+                        </a>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <div class="search-box">
+                        <label for="milestone-search" class="sr-only">Search milestones</label>
+                        <input type="text" id="milestone-search" placeholder="Search milestones..." aria-label="Search milestones">
+                        <i class="fas fa-search"></i>
+                    </div>
+
+                    <div class="filter-dropdown">
+                        <label for="project-filter" class="sr-only">Filter by Project</label>
+                        <select id="project-filter" aria-label="Filter by Project" title="Filter by Project">
+                            <option value="all">All Projects</option>
+                            <!-- Projects will be loaded dynamically -->
+                        </select>
+                    </div>
+
+                    <div class="filter-dropdown">
+                        <label for="status-filter" class="sr-only">Filter by Status</label>
+                        <select id="status-filter" aria-label="Filter by Status" title="Filter by Status">
+                            <option value="all">All Statuses</option>
+                            <option value="not-started">Not Started</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-dropdown">
+                        <label for="date-filter" class="sr-only">Filter by Due Date</label>
+                        <select id="date-filter" aria-label="Filter by Due Date" title="Filter by Due Date">
+                            <option value="all">All Dates</option>
+                            <option value="today">Today</option>
+                            <option value="this-week">This Week</option>
+                            <option value="this-month">This Month</option>
+                            <option value="overdue">Overdue</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="milestones-container" id="milestones-container">
+                    <!-- Milestones will be loaded here dynamically -->
+                </div>
+
+                <!-- No Milestones Message -->
+                <div class="empty-state hidden" id="no-milestones-message">
+                    <i class="fas fa-flag"></i>
+                    <h3>No Milestones Found</h3>
+                    <p>Track your project progress by creating milestones or try adjusting your filters</p>
+                    <button type="button" class="btn btn-primary" id="empty-state-new-milestone-btn">
+                        <i class="fas fa-plus"></i> Create Your First Milestone
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/notification.js"></script>
+    <script src="/assets/js/theme-switcher.js"></script>
+    <script src="/assets/js/projects.js"></script>
+    <script src="/assets/js/milestones-consolidated.js"></script>
+    <script>
+        // Direct event listener for logout button and new milestone button
+        window.onload = function() {
+            // Direct API call to check milestones
+            console.log('Making direct API call to /api/milestones from milestones.html');
+            fetch('/api/milestones', {
+                method: 'GET',
+                credentials: 'include',
+                headers: {
+                    'Cache-Control': 'no-cache',
+                    'Pragma': 'no-cache'
+                }
+            })
+            .then(response => {
+                console.log('Direct API call response:', response.status, response.statusText);
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Failed to fetch milestones');
+                }
+            })
+            .then(data => {
+                console.log('Direct API call data:', data);
+                console.log('Number of milestones returned:', data.length);
+
+                // Manually render milestones if they exist
+                if (data && data.length > 0) {
+                    console.log('Manually rendering milestones');
+                    const milestonesContainer = document.getElementById('milestones-container');
+                    if (milestonesContainer) {
+                        // Clear container
+                        milestonesContainer.innerHTML = '';
+
+                        // Hide empty state message
+                        const noMilestonesMessage = document.getElementById('no-milestones-message');
+                        if (noMilestonesMessage) {
+                            noMilestonesMessage.classList.add('hidden');
+                        }
+
+                        // Render each milestone
+                        data.forEach(milestone => {
+                            const card = document.createElement('div');
+                            card.className = `milestone-card ${milestone.status || 'not-started'}`;
+                            card.dataset.id = milestone._id; // Store milestone ID for click handling
+
+                            // Format date
+                            const dueDate = new Date(milestone.dueDate).toLocaleDateString(undefined, {
+                                year: 'numeric', month: 'short', day: 'numeric'
+                            });
+
+                            // Get project name
+                            let projectName = 'Unknown Project';
+                            if (milestone.projectId) {
+                                if (typeof milestone.projectId === 'object' && milestone.projectId.name) {
+                                    projectName = milestone.projectId.name;
+                                }
+                            }
+
+                            // Create card HTML
+                            card.innerHTML = `
+                                <div class="milestone-header">
+                                    <div>
+                                        <h3 class="milestone-title">${milestone.name}</h3>
+                                        <div class="milestone-project">
+                                            <i class="fas fa-project-diagram"></i> ${projectName}
+                                        </div>
+                                    </div>
+                                    <div class="milestone-actions">
+                                        <button type="button" class="milestone-edit-btn" title="Edit milestone">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button type="button" class="milestone-delete-btn" title="Delete milestone">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="milestone-meta">
+                                    <span class="milestone-status ${milestone.status || 'not-started'}">${milestone.status || 'Not Started'}</span>
+                                    <span class="milestone-due"><i class="far fa-calendar-alt"></i> Due: ${dueDate}</span>
+                                </div>
+                                <div class="milestone-description">
+                                    <p>${milestone.description || 'No description provided'}</p>
+                                </div>
+                                <div class="milestone-progress">
+                                    <div class="progress-label">
+                                        <span>Progress</span>
+                                        <span>${milestone.progress || 0}%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: ${milestone.progress || 0}%"></div>
+                                    </div>
+                                </div>
+                            `;
+
+                            milestonesContainer.appendChild(card);
+
+                            // Add click event to view milestone details
+                            card.addEventListener('click', () => {
+                                console.log('Milestone card clicked, navigating to details page');
+                                window.location.href = `milestone-details.html?id=${milestone._id}`;
+                            });
+
+                            // Add event listeners for edit and delete buttons
+                            const editBtn = card.querySelector('.milestone-edit-btn');
+                            if (editBtn) {
+                                editBtn.addEventListener('click', (e) => {
+                                    e.stopPropagation(); // Prevent card click event
+                                    console.log('Edit button clicked for milestone:', milestone._id);
+                                    if (typeof openEditMilestoneModal === 'function') {
+                                        openEditMilestoneModal(milestone._id);
+                                    } else {
+                                        console.error('openEditMilestoneModal function not found');
+                                        alert('Could not open edit milestone modal. Please try again later.');
+                                    }
+                                });
+                            }
+
+                            const deleteBtn = card.querySelector('.milestone-delete-btn');
+                            if (deleteBtn) {
+                                deleteBtn.addEventListener('click', (e) => {
+                                    e.stopPropagation(); // Prevent card click event
+                                    console.log('Delete button clicked for milestone:', milestone._id);
+                                    if (typeof confirmDeleteMilestone === 'function') {
+                                        confirmDeleteMilestone(milestone._id);
+                                    } else {
+                                        console.error('confirmDeleteMilestone function not found');
+                                        alert('Could not delete milestone. Please try again later.');
+                                    }
+                                });
+                            }
+                        });
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error with direct API call:', error);
+            });
+
+            const logoutBtn = document.querySelector('.logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    console.log('Logout button clicked');
+                    // Show notification
+                    if (typeof showNotification === 'function') {
+                        showNotification('Logging out...', 'info');
+                    }
+
+                    // Redirect to login page
+                    setTimeout(function() {
+                        window.location.href = '/login';
+                    }, 1000);
+                });
+            }
+
+            // Add a direct event listener to the new milestone button
+            const newMilestoneBtn = document.getElementById('new-milestone-btn');
+            if (newMilestoneBtn) {
+                console.log('New milestone button found:', newMilestoneBtn);
+                newMilestoneBtn.addEventListener('click', async function() {
+                    console.log('New milestone button clicked');
+
+                    // Check if modal already exists
+                    const existingModal = document.getElementById('milestone-modal-overlay');
+                    if (existingModal) {
+                        console.log('Modal already exists, removing it first');
+                        existingModal.remove();
+                    }
+
+                    // Call the openNewMilestoneModal function directly
+                    if (typeof openNewMilestoneModal === 'function') {
+                        try {
+                            await openNewMilestoneModal();
+                        } catch (error) {
+                            console.error('Error calling openNewMilestoneModal:', error);
+                            alert('Error opening new milestone modal: ' + error.message);
+                        }
+                    } else {
+                        console.error('openNewMilestoneModal function not found');
+                        alert('Could not open new milestone modal. Please check the console for errors.');
+                    }
+                });
+            } else {
+                console.error('New milestone button not found');
+            }
+
+            // Add event listener to the empty state new milestone button
+            const emptyStateBtn = document.getElementById('empty-state-new-milestone-btn');
+            if (emptyStateBtn) {
+                console.log('Empty state new milestone button found');
+                emptyStateBtn.addEventListener('click', async function() {
+                    console.log('Empty state new milestone button clicked');
+
+                    // Check if modal already exists
+                    const existingModal = document.getElementById('milestone-modal-overlay');
+                    if (existingModal) {
+                        console.log('Modal already exists, removing it first');
+                        existingModal.remove();
+                    }
+
+                    // Call the openNewMilestoneModal function
+                    if (typeof openNewMilestoneModal === 'function') {
+                        try {
+                            await openNewMilestoneModal();
+                        } catch (error) {
+                            console.error('Error calling openNewMilestoneModal:', error);
+                            showNotification('Error opening new milestone modal: ' + error.message, 'error');
+                        }
+                    } else {
+                        console.error('openNewMilestoneModal function not found');
+                        showNotification('Could not open new milestone modal', 'error');
+                    }
+                });
+            } else {
+                console.error('Empty state new milestone button not found');
+            }
+        };
+    </script>
+</body>
+</html>

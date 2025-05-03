@@ -1,0 +1,322 @@
+/* Milestone Reports Styles */
+
+/* Reports Page */
+.reports-page {
+    padding: 20px;
+}
+
+/* Header Actions */
+.reports-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.reports-back .back-link {
+    display: flex;
+    align-items: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.reports-back .back-link:hover {
+    color: var(--primary-color);
+}
+
+.reports-back .back-link i {
+    margin-right: 8px;
+}
+
+.reports-export {
+    display: flex;
+    gap: 10px;
+}
+
+.export-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: var(--border-radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-light);
+    background-color: var(--background-card);
+    color: var(--text-secondary);
+}
+
+.export-btn i {
+    margin-right: 8px;
+}
+
+.export-btn:hover {
+    background-color: var(--background-hover);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Filters */
+.reports-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 16px;
+    background-color: var(--background-card);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.filter-group label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.filter-group select,
+.filter-group input {
+    padding: 8px 12px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--border-light);
+    background-color: var(--background-input);
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.custom-date-range {
+    width: 100%;
+}
+
+.date-inputs {
+    display: flex;
+    gap: 16px;
+}
+
+.date-input {
+    flex: 1;
+}
+
+.filter-actions {
+    display: flex;
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+.apply-filters-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: var(--border-radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.apply-filters-btn i {
+    margin-right: 8px;
+}
+
+.apply-filters-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Reports Grid */
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.report-card {
+    background-color: var(--background-card);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: 16px;
+    transition: all 0.3s ease;
+}
+
+.report-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.report-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.chart-container {
+    height: 250px;
+    position: relative;
+}
+
+/* Reports Table */
+.reports-table-section {
+    background-color: var(--background-card);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.reports-table-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.reports-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.reports-table th,
+.reports-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.reports-table th {
+    font-weight: 600;
+    color: var(--text-primary);
+    background-color: var(--background-hover);
+}
+
+.reports-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.reports-table tbody tr:hover {
+    background-color: var(--background-hover);
+}
+
+.reports-table .progress-bar {
+    height: 8px;
+    background-color: var(--background-hover);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.reports-table .progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.reports-table .status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: var(--border-radius-sm);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.reports-table .status-completed {
+    background-color: var(--success-light);
+    color: var(--success-color);
+}
+
+.reports-table .status-in-progress {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.reports-table .status-not-started {
+    background-color: var(--text-tertiary-light);
+    color: var(--text-tertiary);
+}
+
+/* Loading Spinner */
+.loading-spinner-small {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-light);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.loading-row td {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary);
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .reports-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .date-inputs {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .reports-header-actions,
+    .reports-filters {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .reports-export,
+    .filter-actions {
+        margin-top: 12px;
+        width: 100%;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .reports-table th {
+    background-color: var(--background-dark);
+}
+
+[data-theme="dark"] .reports-table tbody tr:hover {
+    background-color: var(--background-dark);
+}

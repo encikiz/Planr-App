@@ -1,0 +1,100 @@
+/* User Profile Mobile & Tablet Enhancements */
+
+@media screen and (max-width: 1024px) {
+    /* Tablet view */
+    .content-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: var(--spacing-md);
+    }
+    
+    .content-header h2 {
+        margin-bottom: 0;
+    }
+    
+    .user-profile {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Mobile view */
+    .content-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .user-profile {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-left: auto;
+    }
+    
+    .user-profile span {
+        display: none; /* Hide the welcome text on mobile */
+    }
+    
+    .user-profile .avatar {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+    }
+    
+    .user-profile .theme-toggle {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+    
+    .user-profile .logout-btn {
+        padding: 6px 8px;
+        font-size: 14px;
+    }
+    
+    .user-profile .logout-btn .logout-text {
+        display: none; /* Hide the logout text on mobile */
+    }
+    
+    /* Ensure the logout button icon is visible */
+    .user-profile .logout-btn i {
+        margin-right: 0;
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+    .content-header {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .content-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .user-profile {
+        gap: 6px;
+    }
+    
+    .user-profile .avatar {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+    }
+    
+    .user-profile .theme-toggle,
+    .user-profile .logout-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "projectId": 1,
+    "name": "Design Phase Complete",
+    "description": "All UI/UX designs approved by stakeholders",
+    "dueDate": "2025-02-15",
+    "status": "completed",
+    "progress": 100,
+    "deliverables": ["UI Mockups", "Design System", "User Flow Diagrams"]
+  },
+  {
+    "id": 2,
+    "projectId": 1,
+    "name": "Frontend Development",
+    "description": "All frontend components implemented and responsive",
+    "dueDate": "2025-03-30",
+    "status": "in-progress",
+    "progress": 75,
+    "deliverables": ["HTML/CSS Implementation", "JavaScript Functionality", "Responsive Design"]
+  },
+  {
+    "id": 3,
+    "projectId": 1,
+    "name": "Backend Integration",
+    "description": "Frontend connected to backend APIs and data flow established",
+    "dueDate": "2025-04-15",
+    "status": "in-progress",
+    "progress": 40,
+    "deliverables": ["API Integration", "Data Validation", "Error Handling"]
+  },
+  {
+    "id": 4,
+    "projectId": 1,
+    "name": "Final Launch",
+    "description": "Website fully tested and deployed to production",
+    "dueDate": "2025-04-30",
+    "status": "not-started",
+    "progress": 0,
+    "deliverables": ["QA Testing", "Performance Optimization", "Production Deployment"]
+  },
+  {
+    "id": 5,
+    "projectId": 2,
+    "name": "Architecture Planning",
+    "description": "App architecture and data flow designed",
+    "dueDate": "2025-02-15",
+    "status": "completed",
+    "progress": 100,
+    "deliverables": ["Architecture Diagram", "Data Flow Chart", "Technology Stack Documentation"]
+  },
+  {
+    "id": 6,
+    "projectId": 2,
+    "name": "UI Implementation",
+    "description": "All UI components implemented for mobile platforms",
+    "dueDate": "2025-04-15",
+    "status": "in-progress",
+    "progress": 60,
+    "deliverables": ["UI Components", "Navigation Flow", "Responsive Layouts"]
+  },
+  {
+    "id": 7,
+    "projectId": 2,
+    "name": "Backend Development",
+    "description": "Server-side logic and database integration",
+    "dueDate": "2025-05-15",
+    "status": "not-started",
+    "progress": 0,
+    "deliverables": ["API Endpoints", "Database Schema", "Authentication System"]
+  },
+  {
+    "id": 8,
+    "projectId": 2,
+    "name": "App Store Release",
+    "description": "Final testing and submission to app stores",
+    "dueDate": "2025-06-15",
+    "status": "not-started",
+    "progress": 0,
+    "deliverables": ["App Store Assets", "Release Documentation", "Marketing Materials"]
+  },
+  {
+    "id": 9,
+    "projectId": 3,
+    "name": "Database Analysis",
+    "description": "Analysis of current database structure and migration plan",
+    "dueDate": "2025-03-25",
+    "status": "in-progress",
+    "progress": 80,
+    "deliverables": ["Database Schema", "Migration Plan", "Risk Assessment"]
+  },
+  {
+    "id": 10,
+    "projectId": 3,
+    "name": "Data Migration",
+    "description": "Migration of data to new cloud infrastructure",
+    "dueDate": "2025-05-10",
+    "status": "not-started",
+    "progress": 0,
+    "deliverables": ["Migration Scripts", "Data Validation", "Performance Metrics"]
+  },
+  {
+    "id": 11,
+    "projectId": 4,
+    "name": "Campaign Planning",
+    "description": "Define marketing strategy and campaign goals",
+    "dueDate": "2025-04-15",
+    "status": "not-started",
+    "progress": 0,
+    "deliverables": ["Marketing Strategy", "Campaign Calendar", "Budget Allocation"]
+  },
+  {
+    "id": 12,
+    "projectId": 4,
+    "name": "Content Creation",
+    "description": "Create all marketing content for the campaign",
+    "dueDate": "2025-05-15",
+    "status": "not-started",
+    "progress": 0,
+    "deliverables": ["Ad Creatives", "Social Media Content", "Email Templates"]
+  },
+  {
+    "id": 13,
+    "projectId": 4,
+    "name": "Campaign Launch",
+    "description": "Launch and monitor marketing campaign",
+    "dueDate": "2025-06-30",
+    "status": "not-started",
+    "progress": 0,
+    "deliverables": ["Launch Report", "Performance Dashboard", "Optimization Plan"]
+  },
+  {
+    "id": 14,
+    "projectId": 5,
+    "name": "Requirements Gathering",
+    "description": "Define analytics requirements and KPIs",
+    "dueDate": "2025-02-28",
+    "status": "completed",
+    "progress": 100,
+    "deliverables": ["Requirements Document", "KPI Definitions", "Tracking Plan"]
+  },
+  {
+    "id": 15,
+    "projectId": 5,
+    "name": "Implementation",
+    "description": "Implement analytics tracking across the product",
+    "dueDate": "2025-03-30",
+    "status": "completed",
+    "progress": 100,
+    "deliverables": ["Tracking Code", "Event Documentation", "Data Layer"]
+  },
+  {
+    "id": 16,
+    "projectId": 5,
+    "name": "Dashboard Creation",
+    "description": "Create analytics dashboards for stakeholders",
+    "dueDate": "2025-04-15",
+    "status": "completed",
+    "progress": 100,
+    "deliverables": ["Executive Dashboard", "Team Dashboards", "Automated Reports"]
+  }
+]

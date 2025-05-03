@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Planr</title>
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/css/themes.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/task-management.css">
+    <link rel="stylesheet" href="/assets/css/project-filters-rearrange.css">
+    <link rel="stylesheet" href="/assets/css/projects-dark-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/notification-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/auth.css">
+    <link rel="stylesheet" href="/assets/css/user-profile.css">
+    <link rel="stylesheet" href="/assets/css/dark-mode-fix.css">
+    <link rel="stylesheet" href="/assets/css/improved-modal.css">
+    <link rel="stylesheet" href="/assets/css/project-card-fix.css">
+    <link rel="stylesheet" href="/assets/css/theme-toggle.css">
+    <link rel="stylesheet" href="/assets/css/sidebar-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/user-profile-mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Full Page Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <h1 class="logo">Planr</h1>
+        <div class="spinner"></div>
+        <p class="loading-text">Loading projects...</p>
+    </div>
+
+    <div class="app-container page-transition">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">Planr</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="/index.html">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="projects.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tasks.html">
+                            <i class="fas fa-tasks"></i>
+                            <span>Tasks</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="milestones.html">
+                            <i class="fas fa-flag"></i>
+                            <span>Milestones</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="team-members.html">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Team Members</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="team.html">
+                            <i class="fas fa-users"></i>
+                            <span>Teams</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>© 2025 Planr v0.2 developed by hafizanm@gmail.com</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Projects</h2>
+                <div class="user-profile">
+                    <button type="button" id="theme-toggle" class="theme-toggle" title="Switch to Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <span>Welcome, Admin</span>
+                    <div class="avatar">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="Admin">
+                    </div>
+                    <button class="logout-btn" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i><span class="logout-text">Logout</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="projects-container">
+                <div class="filters-section">
+                    <button type="button" class="new-project-btn">
+                        <i class="fas fa-plus"></i> New Project
+                    </button>
+
+                    <div class="filter-options">
+                        <div class="filter-group">
+                            <label for="status-filter" class="sr-only">Filter by Status</label>
+                            <select id="status-filter" aria-label="Filter by Status" title="Filter by Status">
+                                <option value="all">All Statuses</option>
+                                <option value="not-started">Not Started</option>
+                                <option value="planning">Planning</option>
+                                <option value="in-progress">In Progress</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="priority-filter" class="sr-only">Filter by Priority</label>
+                            <select id="priority-filter" aria-label="Filter by Priority" title="Filter by Priority">
+                                <option value="all">All Priorities</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="search-box">
+                        <label for="project-search" class="sr-only">Search projects</label>
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="project-search" placeholder="Search projects..." aria-label="Search projects">
+                    </div>
+                </div>
+
+                <div class="projects-list" id="projects-list">
+                    <!-- Projects will be loaded here dynamically -->
+                </div>
+
+                <!-- No Project Selected Message -->
+                <div class="no-project-selected" id="no-project-selected">
+                    <div class="empty-state">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>No Project Selected</h3>
+                        <p>Click on a project from the list to view its details</p>
+                    </div>
+                </div>
+
+                <!-- Project Details Modal -->
+                <div class="project-details-modal" id="project-details-modal">
+                    <div class="project-details" id="project-details">
+                        <div class="project-header">
+                            <h3 id="project-title">Project Details</h3>
+                            <div class="project-actions">
+                                <button type="button" class="edit-btn" aria-label="Edit project" title="Edit project"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="delete-btn" aria-label="Delete project" title="Delete project"><i class="fas fa-trash"></i></button>
+                                <button type="button" class="close-modal" id="close-modal" aria-label="Close details" title="Close details">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    <div class="project-info">
+                        <div class="info-item">
+                            <span class="label">Status:</span>
+                            <span class="value" id="project-status">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Priority:</span>
+                            <span class="value" id="project-priority">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Timeline:</span>
+                            <span class="value" id="project-timeline">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Progress:</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="project-progress-fill"></div>
+                                <span class="progress-text" id="project-progress-text">0%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-description" id="project-description">
+                        <p>Select a project to view details</p>
+                    </div>
+
+                    <div class="project-teams">
+                        <div class="section-header">
+                            <h4>Teams</h4>
+                            <div class="team-header-actions">
+                                <button type="button" class="team-template-btn" aria-label="Create from template" title="Create from template">
+                                    <i class="fas fa-clipboard-list"></i> Use Template
+                                </button>
+                                <button type="button" class="new-team-btn" aria-label="Add new team" title="Add new team">
+                                    <i class="fas fa-plus"></i> New Team
+                                </button>
+                            </div>
+                        </div>
+                        <div id="project-teams-container" class="project-teams-container">
+                            <!-- Teams will be loaded here dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Legacy team section - will be removed after migration -->
+                    <div class="project-team">
+                        <h4>Team Members</h4>
+                        <div class="team-avatars" id="project-team">
+                            <!-- Team members will be loaded here dynamically -->
+                        </div>
+                    </div>
+
+                    <div class="project-milestones">
+                        <div class="section-header">
+                            <h4>Milestones</h4>
+                            <button type="button" class="new-milestone-btn" aria-label="Add new milestone" title="Add new milestone"><i class="fas fa-plus"></i> New Milestone</button>
+                        </div>
+                        <div class="milestones-list" id="milestones-list">
+                            <!-- Milestones will be loaded here dynamically -->
+                        </div>
+                    </div>
+
+                    <div class="project-tasks">
+                        <div class="section-header">
+                            <h4>Tasks</h4>
+                            <button type="button" class="new-task-btn" aria-label="Add new task" title="Add new task"><i class="fas fa-plus"></i> New Task</button>
+                        </div>
+                        <div class="tasks-list" id="tasks-list">
+                            <!-- Tasks will be loaded here dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/notification.js"></script>
+    <script src="/assets/js/theme-switcher.js"></script>
+    <script src="/assets/js/teams-page.js"></script>
+    <script src="/assets/js/team-api.js"></script>
+    <script src="/assets/js/tasks.js"></script>
+    <script src="/assets/js/tasks-api.js"></script>
+    <script src="/assets/js/projects.js"></script>
+    <script src="/assets/js/milestones-consolidated.js"></script>
+    <script src="/assets/js/improved-modal.js"></script>
+    <script>
+        // Add logout functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoutBtn = document.querySelector('.logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    console.log('Logout button clicked');
+                    // Perform logout
+                    fetch('/api/auth/logout', {
+                        method: 'POST',
+                        credentials: 'include'
+                    })
+                    .then(response => {
+                        // Redirect to login page regardless of response
+                        window.location.href = '/login.html';
+                    })
+                    .catch(error => {
+                        console.error('Error during logout:', error);
+                        // If client-side error, still redirect to login
+                        window.location.href = '/login.html';
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

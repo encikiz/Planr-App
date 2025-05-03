@@ -1,0 +1,146 @@
+/* Desktop Width Fix - Adjust content width for better space utilization */
+
+/* Adjust main content width */
+.main-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 !important;
+    padding: 20px 40px !important;
+    overflow-x: hidden !important;
+}
+
+/* Adjust content header */
+.content-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 25px !important;
+}
+
+/* Adjust team container width */
+.team-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+}
+
+/* Adjust team wrapper */
+.team-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Adjust team members container layout for better space utilization */
+.team-members-container {
+    grid-template-columns: 320px 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 25px !important;
+    gap: 30px !important;
+}
+
+/* Ensure team member details container takes full width */
+.team-member-details-container {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Adjust member stats container for better layout */
+.member-stats-container {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 25px !important;
+}
+
+/* Responsive adjustments for larger screens */
+@media screen and (min-width: 1400px) {
+    .team-members-container {
+        grid-template-columns: 320px 1fr !important;
+    }
+
+    .member-stats-container {
+        grid-template-columns: 1fr 1fr 1fr !important;
+    }
+
+    .member-stats-section:last-child {
+        grid-column: span 1 !important;
+    }
+
+    .main-content {
+        padding: 25px 50px !important;
+    }
+}
+
+/* Responsive adjustments for medium screens */
+@media screen and (max-width: 1200px) and (min-width: 769px) {
+    .main-content {
+        padding: 20px !important;
+    }
+
+    .team-members-container {
+        grid-template-columns: 280px 1fr !important;
+        gap: 20px !important;
+    }
+}
+
+/* Fix for app container */
+@media screen and (min-width: 1025px) {
+    .app-container {
+        display: grid !important;
+        grid-template-columns: 240px 1fr !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100vh !important;
+        overflow-x: hidden !important;
+    }
+
+    /* Fix for sidebar */
+    .sidebar {
+        width: 240px !important;
+        min-width: 240px !important;
+    }
+}
+
+/* Ensure all content is visible */
+.team-tabs, .tab-content, .filters-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Improve teams tab layout */
+.teams-list {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)) !important;
+    gap: 25px !important;
+    width: 100% !important;
+    padding: 25px !important;
+}
+
+/* Improve filters section layout */
+.filters-section {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 20px 25px !important;
+    background-color: white !important;
+}
+
+/* Improve search box */
+.search-box input {
+    min-width: 250px !important;
+    padding: 10px 15px !important;
+}
+
+/* Extra large desktop screens */
+@media screen and (min-width: 1920px) {
+    .main-content {
+        padding: 30px 50px !important;
+    }
+
+    .team-members-container {
+        grid-template-columns: 380px 1fr !important;
+    }
+
+    .teams-list {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)) !important;
+    }
+}

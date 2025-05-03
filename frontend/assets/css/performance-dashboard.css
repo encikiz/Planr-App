@@ -1,0 +1,182 @@
+/* Performance Dashboard Styling */
+
+.performance-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.performance-chart-container {
+    background-color: var(--background-card);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-light);
+    height: 300px;
+    position: relative;
+}
+
+.performance-chart-container h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.performance-metrics {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.metrics-section {
+    background-color: var(--background-card);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-light);
+}
+
+.metrics-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.metric-item {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--background-alt);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.metric-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.metric-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.metric-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.project-contributions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.project-contribution {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-name {
+    flex: 0 0 120px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text-primary);
+}
+
+.contribution-bar {
+    flex: 1;
+    height: 8px;
+    background-color: var(--background-alt);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.contribution-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+.contribution-value {
+    flex: 0 0 40px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: right;
+    color: var(--text-secondary);
+}
+
+/* Loading and error states */
+.chart-loading, .chart-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.chart-loading i, .chart-error i {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+.chart-error i {
+    color: var(--danger-color);
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .performance-chart-container,
+[data-theme="dark"] .metrics-section {
+    background-color: #2D2D30;
+    border-color: #3C3C3C;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .metric-item {
+    background-color: #252526;
+}
+
+[data-theme="dark"] .contribution-bar {
+    background-color: #3C3C3C;
+}
+
+[data-theme="dark"] .metric-value {
+    color: #3794FF;
+}
+
+[data-theme="dark"] .contribution-fill {
+    background-color: #3794FF;
+}
+
+/* Responsive styles */
+@media screen and (min-width: 768px) {
+    .performance-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-name {
+        flex: 0 0 100px;
+    }
+}
