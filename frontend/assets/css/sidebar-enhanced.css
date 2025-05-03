@@ -297,6 +297,7 @@
         .sidebar {
             height: 80px;
             max-height: 80px;
+            background: #FFFFFF; /* Solid white background in light mode */
         }
 
         .sidebar-nav ul li a i {
@@ -305,7 +306,22 @@
         }
 
         .sidebar-nav ul li a span {
-            font-size: 12px;
+            font-size: 10px; /* Smaller text size */
+            width: 100%; /* Full width for proper centering */
+            text-align: center; /* Center align all text */
+            white-space: nowrap; /* Prevent text wrapping */
+            overflow: hidden; /* Hide overflow */
+            text-overflow: ellipsis; /* Add ellipsis for overflow */
+        }
+
+        /* Specific fix for Team Members menu item */
+        .sidebar-nav ul li a span.team-members-label {
+            font-size: 9px; /* Even smaller for longer text */
+        }
+
+        /* Dark mode specific styles */
+        [data-theme="dark"] .sidebar {
+            background: #1E1E1E; /* Solid dark background in dark mode */
         }
     }
 }

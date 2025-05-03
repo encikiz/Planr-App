@@ -11,7 +11,7 @@
         left: 0;
         bottom: 0;
         z-index: 100;
-        background: linear-gradient(to bottom, var(--background-alt) 0%, var(--card-color) 100%);
+        background: #FFFFFF; /* Solid white background in light mode */
         box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
         border-top: 1px solid var(--border-light);
     }
@@ -143,7 +143,7 @@
         left: 0;
         bottom: 0;
         z-index: 100;
-        background: linear-gradient(to bottom, var(--background-alt) 0%, var(--card-color) 100%);
+        background: #FFFFFF; /* Solid white background in light mode */
         box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
         border-top: 1px solid var(--border-light);
     }
@@ -190,9 +190,14 @@
 
     .sidebar-nav ul li a span {
         display: block;
-        font-size: 12px;
+        font-size: 10px; /* Smaller text size */
         font-weight: 500;
         transition: color 0.2s ease;
+        width: 100%; /* Full width for proper centering */
+        text-align: center; /* Center align all text */
+        white-space: nowrap; /* Prevent text wrapping */
+        overflow: hidden; /* Hide overflow */
+        text-overflow: ellipsis; /* Add ellipsis for overflow */
     }
 
     .sidebar-nav ul li a:hover i {
